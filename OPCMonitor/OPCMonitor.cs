@@ -14,7 +14,7 @@ namespace OPCMonitor
 {
     public partial class OPCMonitor : ServiceBase
     {
-        private OPCConnection opc;
+        private OPCECCUSA opc;
         private Timer t;
         private bool first = true;
 
@@ -26,38 +26,15 @@ namespace OPCMonitor
 
         protected override void OnStart(string[] args)
         {
-            opc = new OPCConnection(Properties.Settings.Default.ProgID);
+            opc = new OPCECCUSA(Properties.Settings.Default.ProgID, Properties.Settings.Default.ItemBase);
             t = new Timer();
-
-            foreach (string name in new string[] { "agua", "lubric", "horom" })
-            {
-                for (int i = 1; i <= 7; i++)
-                {
-                    string queryName = string.Concat(name, i);
-                    string tagName = string.Concat(Properties.Settings.Default.ItemBase, ".", queryName);
-                    opc.AddItem(queryName, tagName);
-                }
-            }
-
-            foreach (string name in new string[] { "soda", "aditiv" })
-            {
-                for (int i = 1; i <= 6; i++)
-                {
-                    string queryName = string.Concat(name, i);
-                    string tagName = string.Concat(Properties.Settings.Default.ItemBase, ".", queryName);
-                    opc.AddItem(queryName, tagName);
-                }
-            }
-
             t.Elapsed += new ElapsedEventHandler(t_Elapsed);
-
             t.Interval = nextInterval;
             t.Start();
         }
 
         protected override void OnStop(){
             t.Stop();
-
             opc.Dispose();
         }
         #endregion
@@ -72,59 +49,27 @@ namespace OPCMonitor
             {
                 try
                 {
-                    double[] valAgua = getItemValues("agua", 7),
-                        valLubricante = getItemValues("lubric", 7),
-                        valHorometro = getItemValues("horom", 7),
-                        valSoda = getItemValues("soda", 6),
-                        valAditivo = getItemValues("aditiv", 6);
-
-                    using (SqlConnection con = new SqlConnection(Properties.Settings.Default.ConnectionString))
+                    using (DB db = new DB())
                     {
-                        SqlCommand cmdAgua = new SqlCommand(Properties.Settings.Default.spAgua, con);
-                        cmdAgua.CommandType = CommandType.StoredProcedure;
-                        for (int i = 1; i <= valAgua.Length; i++)
-                        {
-                            cmdAgua.Parameters.Add("agua" + i, SqlDbType.Float).Value = valAgua[i - 1];
-                        }
+                        db.Save(Properties.Settings.Default.spAgua,
+                            new string[] { "agua1", "agua2", "agua3", "agua4", "agua5", "agua6", "agua7" },
+                            opc.Agua);
 
-                        SqlCommand cmdLubricante = new SqlCommand(Properties.Settings.Default.spLubricante, con);
-                        cmdLubricante.CommandType = CommandType.StoredProcedure;
-                        for (int i = 1; i <= valLubricante.Length; i++)
-                        {
-                            cmdLubricante.Parameters.Add("lubricante" + i, SqlDbType.Float).Value = valLubricante[i - 1];
-                        }
+                        db.Save(Properties.Settings.Default.spLubricante,
+                            new string[] { "lubricante1", "lubricante2", "lubricante3", "lubricante4", "lubricante5", "lubricante6", "lubricante7" },
+                            opc.Lubricante);
 
-                        SqlCommand cmdHorometro = new SqlCommand(Properties.Settings.Default.spHorometro, con);
-                        cmdHorometro.CommandType = CommandType.StoredProcedure;
-                        for (int i = 1; i <= valHorometro.Length; i++)
-                        {
-                            cmdHorometro.Parameters.Add("horometro" + i, SqlDbType.Float).Value = valHorometro[i - 1];
-                        }
+                        db.Save(Properties.Settings.Default.spHorometro,
+                            new string[] { "horometro1", "horometro2", "horometro3", "horometro4", "horometro5", "horometro6", "horometro7" },
+                            opc.Horometro);
 
-                        SqlCommand cmdSoda = new SqlCommand(Properties.Settings.Default.spSoda, con);
-                        cmdSoda.CommandType = CommandType.StoredProcedure;
-                        for (int i = 1; i <= valSoda.Length; i++)
-                        {
-                            cmdSoda.Parameters.Add("soda" + i, SqlDbType.Float).Value = valSoda[i - 1];
-                        }
+                        db.Save(Properties.Settings.Default.spSoda,
+                            new string[] { "soda1", "soda2", "soda3", "soda4", "soda5", "soda6" },
+                            opc.Soda);
 
-                        SqlCommand cmdAditivo = new SqlCommand(Properties.Settings.Default.spAditivo, con);
-                        cmdAditivo.CommandType = CommandType.StoredProcedure;
-                        for (int i = 1; i <= valAditivo.Length; i++)
-                        {
-                            cmdAditivo.Parameters.Add("aditivo" + i, SqlDbType.Float).Value = valAditivo[i - 1];
-                        }
-
-                        con.Open();
-
-                        cmdAgua.ExecuteNonQuery();
-                        cmdLubricante.ExecuteNonQuery();
-                        cmdHorometro.ExecuteNonQuery();
-                        cmdSoda.ExecuteNonQuery();
-                        cmdAditivo.ExecuteNonQuery();
-
-                        con.Close();
-
+                        db.Save(Properties.Settings.Default.spAditivo,
+                            new string[] { "aditivo1", "aditivo2", "aditivo3", "aditivo4", "aditivo5", "aditivo6" },
+                            opc.Aditivo);
                     }
                 }
                 catch (Exception ex)
