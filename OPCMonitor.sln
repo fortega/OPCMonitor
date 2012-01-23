@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OPCMonitor", "OPCMonitor\OPCMonitor.csproj", "{D0C3A581-4670-4D9E-8A7F-96648236D039}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OPCHelper", "OPCHelper\OPCHelper.csproj", "{E2774FC4-E7E1-425D-B70F-2BFD9659AB61}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalacion", "Instalacion\Instalacion.vdproj", "{55584150-24A5-42B5-B22D-0E5D09E8BBB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{CDD28EC5-1541-475C-878C-4A3ECEF9A674}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0C3A581-4670-4D9E-8A7F-96648236D039}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{D0C3A581-4670-4D9E-8A7F-96648236D039}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{D0C3A581-4670-4D9E-8A7F-96648236D039}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{D0C3A581-4670-4D9E-8A7F-96648236D039}.Debug|x86.ActiveCfg = Debug|x86
+		{D0C3A581-4670-4D9E-8A7F-96648236D039}.Debug|x86.Build.0 = Debug|x86
+		{D0C3A581-4670-4D9E-8A7F-96648236D039}.Release|Any CPU.ActiveCfg = Release|x86
+		{D0C3A581-4670-4D9E-8A7F-96648236D039}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{D0C3A581-4670-4D9E-8A7F-96648236D039}.Release|Mixed Platforms.Build.0 = Release|x86
+		{D0C3A581-4670-4D9E-8A7F-96648236D039}.Release|x86.ActiveCfg = Release|x86
+		{D0C3A581-4670-4D9E-8A7F-96648236D039}.Release|x86.Build.0 = Release|x86
+		{E2774FC4-E7E1-425D-B70F-2BFD9659AB61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2774FC4-E7E1-425D-B70F-2BFD9659AB61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2774FC4-E7E1-425D-B70F-2BFD9659AB61}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E2774FC4-E7E1-425D-B70F-2BFD9659AB61}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E2774FC4-E7E1-425D-B70F-2BFD9659AB61}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E2774FC4-E7E1-425D-B70F-2BFD9659AB61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2774FC4-E7E1-425D-B70F-2BFD9659AB61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2774FC4-E7E1-425D-B70F-2BFD9659AB61}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E2774FC4-E7E1-425D-B70F-2BFD9659AB61}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E2774FC4-E7E1-425D-B70F-2BFD9659AB61}.Release|x86.ActiveCfg = Release|Any CPU
+		{55584150-24A5-42B5-B22D-0E5D09E8BBB2}.Debug|Any CPU.ActiveCfg = Debug
+		{55584150-24A5-42B5-B22D-0E5D09E8BBB2}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{55584150-24A5-42B5-B22D-0E5D09E8BBB2}.Debug|x86.ActiveCfg = Debug
+		{55584150-24A5-42B5-B22D-0E5D09E8BBB2}.Release|Any CPU.ActiveCfg = Release
+		{55584150-24A5-42B5-B22D-0E5D09E8BBB2}.Release|Mixed Platforms.ActiveCfg = Release
+		{55584150-24A5-42B5-B22D-0E5D09E8BBB2}.Release|x86.ActiveCfg = Release
+		{CDD28EC5-1541-475C-878C-4A3ECEF9A674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDD28EC5-1541-475C-878C-4A3ECEF9A674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDD28EC5-1541-475C-878C-4A3ECEF9A674}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{CDD28EC5-1541-475C-878C-4A3ECEF9A674}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{CDD28EC5-1541-475C-878C-4A3ECEF9A674}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CDD28EC5-1541-475C-878C-4A3ECEF9A674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDD28EC5-1541-475C-878C-4A3ECEF9A674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDD28EC5-1541-475C-878C-4A3ECEF9A674}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{CDD28EC5-1541-475C-878C-4A3ECEF9A674}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{CDD28EC5-1541-475C-878C-4A3ECEF9A674}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

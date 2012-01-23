@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="OPCMonitor.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ProgID" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Kepware.KEPServerEX.V5</Value>
+    </Setting>
+    <Setting Name="ItemBase" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Channel1.Device1.TagMonito</Value>
+    </Setting>
+    <Setting Name="ConnectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=(local)\SQLEXPRESS;Initial Catalog=OPCMonitor;Integrated Security=True;Application Name=OPCMonitor</Value>
+    </Setting>
+    <Setting Name="spAgua" Type="System.String" Scope="User">
+      <Value Profile="(Default)">insertar_agua</Value>
+    </Setting>
+    <Setting Name="spLubricante" Type="System.String" Scope="User">
+      <Value Profile="(Default)">insertar_lubricante</Value>
+    </Setting>
+    <Setting Name="spHorometro" Type="System.String" Scope="User">
+      <Value Profile="(Default)">insertar_horometro</Value>
+    </Setting>
+    <Setting Name="spSoda" Type="System.String" Scope="User">
+      <Value Profile="(Default)">insertar_soda</Value>
+    </Setting>
+    <Setting Name="spAditivo" Type="System.String" Scope="User">
+      <Value Profile="(Default)">insertar_aditivo</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
