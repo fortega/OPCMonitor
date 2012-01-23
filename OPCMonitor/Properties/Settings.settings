@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="ProgID" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Kepware.KEPServerEX.V5</Value>
+      <Value Profile="(Default)">KEPware.KEPServerEx.V4</Value>
     </Setting>
     <Setting Name="ItemBase" Type="System.String" Scope="User">
       <Value Profile="(Default)">Channel1.Device1.TagMonito</Value>
