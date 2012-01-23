@@ -49,27 +49,32 @@ namespace OPCMonitor
             {
                 try
                 {
+                    object[] agua = opc.Agua,
+                        lubricante = opc.Lubricante,
+                        horometro = opc.Horometro,
+                        soda = opc.Soda,
+                        aditivo = opc.Aditivo;
                     using (DB db = new DB())
                     {
                         db.Save(Properties.Settings.Default.spAgua,
                             new string[] { "agua1", "agua2", "agua3", "agua4", "agua5", "agua6", "agua7" },
-                            opc.Agua);
+                            agua);
 
                         db.Save(Properties.Settings.Default.spLubricante,
                             new string[] { "lubricante1", "lubricante2", "lubricante3", "lubricante4", "lubricante5", "lubricante6", "lubricante7" },
-                            opc.Lubricante);
+                            lubricante);
 
                         db.Save(Properties.Settings.Default.spHorometro,
                             new string[] { "horometro1", "horometro2", "horometro3", "horometro4", "horometro5", "horometro6", "horometro7" },
-                            opc.Horometro);
+                            horometro);
 
                         db.Save(Properties.Settings.Default.spSoda,
                             new string[] { "soda1", "soda2", "soda3", "soda4", "soda5", "soda6" },
-                            opc.Soda);
+                            soda);
 
                         db.Save(Properties.Settings.Default.spAditivo,
                             new string[] { "aditivo1", "aditivo2", "aditivo3", "aditivo4", "aditivo5", "aditivo6" },
-                            opc.Aditivo);
+                            aditivo);
                     }
                 }
                 catch (Exception ex)
@@ -78,18 +83,6 @@ namespace OPCMonitor
                 }
             }
             t.Interval = nextInterval;
-        }
-
-        double[] getItemValues(string basename, int num)
-        {
-            double[] r = new double[num];
-
-            for (int i = 1; i <= num; i++)
-            {
-                r[i - 1] = (double)opc[basename + i];
-            }
-
-            return r;
         }
 
         double nextInterval
