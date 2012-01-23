@@ -1,0 +1,4 @@
+*.suo
+Instalacion/Debug
+*/bin
+*/obj
