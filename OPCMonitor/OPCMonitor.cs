@@ -14,30 +14,21 @@ namespace OPCMonitor
 {
     public partial class OPCMonitor : ServiceBase
     {
-        private OPCConnection opc = new OPCConnection(Properties.Settings.Default.ProgID);
-        private Timer t = new Timer();
+        private OPCConnection opc;
+        private Timer t;
+        private bool first = true;
 
         #region ServiceBase
         public OPCMonitor()
         {
             InitializeComponent();
-
-            setup();
         }
 
         protected override void OnStart(string[] args)
         {
-            t.Interval = nextInterval;
-            t.Start();
-        }
+            opc = new OPCConnection(Properties.Settings.Default.ProgID);
+            t = new Timer();
 
-        protected override void OnStop(){
-            t.Stop();
-        }
-        #endregion
-
-        void setup()
-        {
             foreach (string name in new string[] { "agua", "lubric", "horom" })
             {
                 for (int i = 1; i <= 7; i++)
@@ -59,75 +50,89 @@ namespace OPCMonitor
             }
 
             t.Elapsed += new ElapsedEventHandler(t_Elapsed);
+
+            t.Interval = nextInterval;
+            t.Start();
         }
+
+        protected override void OnStop(){
+            t.Stop();
+
+            opc.Dispose();
+        }
+        #endregion
 
         void t_Elapsed(object sender, ElapsedEventArgs e)
         {
-            try
+            if (first)
             {
-                double[] valAgua = getItemValues("agua",7),
-                    valLubricante = getItemValues("lubric", 7),
-                    valHorometro = getItemValues("horom", 7),
-                    valSoda = getItemValues("soda", 6),
-                    valAditivo = getItemValues("aditiv", 6);
-
-                using (SqlConnection con = new SqlConnection(Properties.Settings.Default.ConnectionString))
+                first = false;
+            }
+            else
+            {
+                try
                 {
-                    SqlCommand cmdAgua = new SqlCommand(Properties.Settings.Default.spAgua, con);
-                    cmdAgua.CommandType = CommandType.StoredProcedure;
-                    for(int i = 1; i <= valAgua.Length;i++)
+                    double[] valAgua = getItemValues("agua", 7),
+                        valLubricante = getItemValues("lubric", 7),
+                        valHorometro = getItemValues("horom", 7),
+                        valSoda = getItemValues("soda", 6),
+                        valAditivo = getItemValues("aditiv", 6);
+
+                    using (SqlConnection con = new SqlConnection(Properties.Settings.Default.ConnectionString))
                     {
-                        cmdAgua.Parameters.Add("agua" + i, SqlDbType.Float).Value = valAgua[i - 1];
+                        SqlCommand cmdAgua = new SqlCommand(Properties.Settings.Default.spAgua, con);
+                        cmdAgua.CommandType = CommandType.StoredProcedure;
+                        for (int i = 1; i <= valAgua.Length; i++)
+                        {
+                            cmdAgua.Parameters.Add("agua" + i, SqlDbType.Float).Value = valAgua[i - 1];
+                        }
+
+                        SqlCommand cmdLubricante = new SqlCommand(Properties.Settings.Default.spLubricante, con);
+                        cmdLubricante.CommandType = CommandType.StoredProcedure;
+                        for (int i = 1; i <= valLubricante.Length; i++)
+                        {
+                            cmdLubricante.Parameters.Add("lubricante" + i, SqlDbType.Float).Value = valLubricante[i - 1];
+                        }
+
+                        SqlCommand cmdHorometro = new SqlCommand(Properties.Settings.Default.spHorometro, con);
+                        cmdHorometro.CommandType = CommandType.StoredProcedure;
+                        for (int i = 1; i <= valHorometro.Length; i++)
+                        {
+                            cmdHorometro.Parameters.Add("horometro" + i, SqlDbType.Float).Value = valHorometro[i - 1];
+                        }
+
+                        SqlCommand cmdSoda = new SqlCommand(Properties.Settings.Default.spSoda, con);
+                        cmdSoda.CommandType = CommandType.StoredProcedure;
+                        for (int i = 1; i <= valSoda.Length; i++)
+                        {
+                            cmdSoda.Parameters.Add("soda" + i, SqlDbType.Float).Value = valSoda[i - 1];
+                        }
+
+                        SqlCommand cmdAditivo = new SqlCommand(Properties.Settings.Default.spAditivo, con);
+                        cmdAditivo.CommandType = CommandType.StoredProcedure;
+                        for (int i = 1; i <= valAditivo.Length; i++)
+                        {
+                            cmdAditivo.Parameters.Add("aditivo" + i, SqlDbType.Float).Value = valAditivo[i - 1];
+                        }
+
+                        con.Open();
+
+                        cmdAgua.ExecuteNonQuery();
+                        cmdLubricante.ExecuteNonQuery();
+                        cmdHorometro.ExecuteNonQuery();
+                        cmdSoda.ExecuteNonQuery();
+                        cmdAditivo.ExecuteNonQuery();
+
+                        con.Close();
+
                     }
-
-                    SqlCommand cmdLubricante = new SqlCommand(Properties.Settings.Default.spLubricante, con);
-                    cmdLubricante.CommandType = CommandType.StoredProcedure;
-                    for (int i = 1; i <= valLubricante.Length; i++)
-                    {
-                        cmdLubricante.Parameters.Add("lubricante" + i, SqlDbType.Float).Value = valLubricante[i - 1];
-                    }
-
-                    SqlCommand cmdHorometro = new SqlCommand(Properties.Settings.Default.spHorometro, con);
-                    cmdHorometro.CommandType = CommandType.StoredProcedure;
-                    for (int i = 1; i <= valHorometro.Length; i++)
-                    {
-                        cmdHorometro.Parameters.Add("horometro" + i, SqlDbType.Float).Value = valHorometro[i - 1];
-                    }
-
-                    SqlCommand cmdSoda = new SqlCommand(Properties.Settings.Default.spSoda, con);
-                    cmdSoda.CommandType = CommandType.StoredProcedure;
-                    for (int i = 1; i <= valSoda.Length; i++)
-                    {
-                        cmdSoda.Parameters.Add("soda" + i, SqlDbType.Float).Value = valSoda[i - 1];
-                    }
-
-                    SqlCommand cmdAditivo = new SqlCommand(Properties.Settings.Default.spAditivo, con);
-                    cmdAditivo.CommandType = CommandType.StoredProcedure;
-                    for (int i = 1; i <= valAditivo.Length; i++)
-                    {
-                        cmdAditivo.Parameters.Add("aditivo" + i, SqlDbType.Float).Value = valAditivo[i - 1];
-                    }
-
-                    con.Open();
-
-                    cmdAgua.ExecuteNonQuery();
-                    cmdLubricante.ExecuteNonQuery();
-                    cmdHorometro.ExecuteNonQuery();
-                    cmdSoda.ExecuteNonQuery();
-                    cmdAditivo.ExecuteNonQuery();
-
-                    con.Close();
-                    
+                }
+                catch (Exception ex)
+                {
+                    Log.WriteLog(ex);
                 }
             }
-            catch (Exception ex)
-            {
-                Log.WriteLog(ex);
-            }
-            finally
-            {
-                t.Interval = nextInterval;
-            }
+            t.Interval = nextInterval;
         }
 
         double[] getItemValues(string basename, int num)
