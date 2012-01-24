@@ -68,7 +68,11 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Totalizado\Aditivo.aspx" />
     <Content Include="Totalizado\Agua.aspx" />
+    <Content Include="Totalizado\Horometro.aspx" />
+    <Content Include="Totalizado\Lubricante.aspx" />
+    <Content Include="Totalizado\Soda.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -166,12 +170,40 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="Totalizado\Aditivo.aspx.cs">
+      <DependentUpon>Aditivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Totalizado\Aditivo.aspx.designer.cs">
+      <DependentUpon>Aditivo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Totalizado\Agua.aspx.cs">
       <DependentUpon>Agua.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Totalizado\Agua.aspx.designer.cs">
       <DependentUpon>Agua.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Totalizado\Horometro.aspx.cs">
+      <DependentUpon>Horometro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Totalizado\Horometro.aspx.designer.cs">
+      <DependentUpon>Horometro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Totalizado\Lubricante.aspx.cs">
+      <DependentUpon>Lubricante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Totalizado\Lubricante.aspx.designer.cs">
+      <DependentUpon>Lubricante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Totalizado\Soda.aspx.cs">
+      <DependentUpon>Soda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Totalizado\Soda.aspx.designer.cs">
+      <DependentUpon>Soda.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
