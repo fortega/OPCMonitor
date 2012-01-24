@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <publishData>
-  <publishProfile publishUrl="G:\OPC Monitor\Web" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
-    <file relUrl="bin/Web.pdb" publishTime="01/22/2012 20:15:04" />
-    <file relUrl="Web.config" publishTime="01/22/2012 23:07:55" />
+  <publishProfile publishUrl="A:\Web" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/Web.pdb" publishTime="01/24/2012 01:14:26" />
+    <file relUrl="Web.config" publishTime="01/24/2012 01:18:20" />
     <file relUrl="Site.Master" publishTime="01/22/2012 20:10:19" />
     <file relUrl="Account/Web.config" publishTime="01/22/2012 20:10:19" />
     <file relUrl="Account/Register.aspx" publishTime="01/22/2012 20:10:19" />
     <file relUrl="Account/ChangePasswordSuccess.aspx" publishTime="01/22/2012 20:10:19" />
     <file relUrl="Account/Login.aspx" publishTime="01/22/2012 20:10:19" />
-    <file relUrl="bin/Web.dll" publishTime="01/22/2012 20:15:05" />
+    <file relUrl="bin/Web.dll" publishTime="01/24/2012 01:14:27" />
     <file relUrl="Scripts/jquery-1.4.1.js" publishTime="01/22/2012 20:10:19" />
     <file relUrl="Account/ChangePassword.aspx" publishTime="01/22/2012 20:10:19" />
     <file relUrl="Global.asax" publishTime="01/22/2012 20:10:19" />
