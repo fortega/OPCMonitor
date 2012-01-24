@@ -13,6 +13,7 @@
     <RootNamespace>Web</RootNamespace>
     <AssemblyName>Web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,6 +38,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -55,12 +57,22 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="Instantaneo\Aditivo.aspx" />
+    <Content Include="Instantaneo\Agua.aspx" />
+    <Content Include="Instantaneo\Horometro.aspx" />
+    <Content Include="Instantaneo\Lubricante.aspx" />
+    <Content Include="Instantaneo\Soda.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Totalizado\Aditivo.aspx" />
+    <Content Include="Totalizado\Agua.aspx" />
+    <Content Include="Totalizado\Horometro.aspx" />
+    <Content Include="Totalizado\Lubricante.aspx" />
+    <Content Include="Totalizado\Soda.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -115,6 +127,41 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Instantaneo\Aditivo.aspx.cs">
+      <DependentUpon>Aditivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Instantaneo\Aditivo.aspx.designer.cs">
+      <DependentUpon>Aditivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Instantaneo\Agua.aspx.cs">
+      <DependentUpon>Agua.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Instantaneo\Agua.aspx.designer.cs">
+      <DependentUpon>Agua.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Instantaneo\Horometro.aspx.cs">
+      <DependentUpon>Horometro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Instantaneo\Horometro.aspx.designer.cs">
+      <DependentUpon>Horometro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Instantaneo\Lubricante.aspx.cs">
+      <DependentUpon>Lubricante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Instantaneo\Lubricante.aspx.designer.cs">
+      <DependentUpon>Lubricante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Instantaneo\Soda.aspx.cs">
+      <DependentUpon>Soda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Instantaneo\Soda.aspx.designer.cs">
+      <DependentUpon>Soda.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -122,6 +169,41 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Totalizado\Aditivo.aspx.cs">
+      <DependentUpon>Aditivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Totalizado\Aditivo.aspx.designer.cs">
+      <DependentUpon>Aditivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Totalizado\Agua.aspx.cs">
+      <DependentUpon>Agua.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Totalizado\Agua.aspx.designer.cs">
+      <DependentUpon>Agua.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Totalizado\Horometro.aspx.cs">
+      <DependentUpon>Horometro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Totalizado\Horometro.aspx.designer.cs">
+      <DependentUpon>Horometro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Totalizado\Lubricante.aspx.cs">
+      <DependentUpon>Lubricante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Totalizado\Lubricante.aspx.designer.cs">
+      <DependentUpon>Lubricante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Totalizado\Soda.aspx.cs">
+      <DependentUpon>Soda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Totalizado\Soda.aspx.designer.cs">
+      <DependentUpon>Soda.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
