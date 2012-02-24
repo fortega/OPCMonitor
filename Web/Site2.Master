@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2.Master.cs" Inherits="Web.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta name="AUTHOR" content="Felipe M. Ortega Bustamante / felipeortegabustamante@gmail.com" />
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1><%= Page.Title %></h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        [ <a href="~/Account/Login.aspx" id="HeadLoginStatus" runat="server">Iniciar Sesion</a>
+                        ]
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Bienvenido <span class="bold">
+                            <asp:LoginName ID="HeadLoginName" runat="server" />
+                        </span>! [
+                        <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out"
+                            LogoutPageUrl="~/" />
+                        ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
+                    IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Inicio" />
+                        <asp:MenuItem Text="Instantaneos">
+                            <asp:MenuItem NavigateUrl="~/Instantaneo/Aditivo.aspx" Text="Aditivo"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Instantaneo/Agua.aspx" Text="Agua"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Instantaneo/Horometro.aspx" Text="Horometro"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Instantaneo/Lubricante.aspx" Text="Lubricante"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Instantaneo/Soda.aspx" Text="Soda"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Totalizados">
+                            <asp:MenuItem NavigateUrl="~/Totalizado/Aditivo.aspx" Text="Aditivo"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Totalizado/Agua.aspx" Text="Agua"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Totalizado/Horometro.aspx" Text="Horometro"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Totalizado/Lubricante.aspx" Text="Lubricante"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Totalizado/Soda.aspx" Text="Soda"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Diario">
+                            <asp:MenuItem NavigateUrl="~/Diario/Lubricante.aspx" Text="Lubricante"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Presupuesto">
+                            <asp:MenuItem NavigateUrl="~/Presupuesto/Lubricante.aspx" Text="Lubricante"></asp:MenuItem>
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        Felipe Ortega
+        <%= DateTime.Now.Year %>
+    </div>
+    </form>
+</body>
+</html>

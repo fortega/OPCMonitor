@@ -1,0 +1,90 @@
+﻿body
+{
+    font-family: "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Arial, Helvetica, Verdana, sans-serif;
+    font-size: 1.00em;
+}
+h1, h2, #head
+{
+    font-size: 32px;
+    padding: 0px;
+    margin-bottom: 0px;
+    font-variant: small-caps;
+    text-transform: none;
+    font-weight: bolder;
+}
+h2
+{
+    font-size: 24px;
+    font-weight: bolder;
+}
+#head, #main, #menu
+{
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#head
+{
+    background: #017ac9;
+    height: 34px;
+    text-align: center;
+    color: #ffffff;
+}
+#head #logo
+{
+    width: 181px;
+    background-color: white;
+    float: left;
+}
+
+div.hideSkiplink
+{
+    background-color: #3a4f63;
+    width: 100%;
+}
+
+div.menu
+{
+    padding: 2px;
+}
+
+div.menu ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+div.menu ul li a, div.menu ul li a:visited
+{
+    background-color: #007ac9;
+    border: 1px white solid;
+    color: white;
+    display: block;
+    line-height: 1.35em;
+    padding: 4px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+div.menu ul li a:hover
+{
+    background-color: #a9bcc9;
+    color: #007ac9;
+    text-decoration: none;
+}
+
+div.menu ul li a:active
+{
+    background-color: #465c71;
+    color: #cfdbe6;
+    text-decoration: none;
+}
+
+.centerTable
+{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
