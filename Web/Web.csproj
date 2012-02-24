@@ -71,11 +71,11 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="Totalizado\Aditivo.aspx" />
-    <Content Include="Totalizado\Agua.aspx" />
-    <Content Include="Totalizado\Horometro.aspx" />
-    <Content Include="Totalizado\Lubricante.aspx" />
-    <Content Include="Totalizado\Soda.aspx" />
+    <Content Include="Acumulado\Aditivo.aspx" />
+    <Content Include="Acumulado\Agua.aspx" />
+    <Content Include="Acumulado\Horometro.aspx" />
+    <Content Include="Acumulado\Lubricante.aspx" />
+    <Content Include="Acumulado\Soda.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -200,39 +200,39 @@
     <Compile Include="Site2.Master.designer.cs">
       <DependentUpon>Site2.Master</DependentUpon>
     </Compile>
-    <Compile Include="Totalizado\Aditivo.aspx.cs">
+    <Compile Include="Acumulado\Aditivo.aspx.cs">
       <DependentUpon>Aditivo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Totalizado\Aditivo.aspx.designer.cs">
+    <Compile Include="Acumulado\Aditivo.aspx.designer.cs">
       <DependentUpon>Aditivo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Totalizado\Agua.aspx.cs">
+    <Compile Include="Acumulado\Agua.aspx.cs">
       <DependentUpon>Agua.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Totalizado\Agua.aspx.designer.cs">
+    <Compile Include="Acumulado\Agua.aspx.designer.cs">
       <DependentUpon>Agua.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Totalizado\Horometro.aspx.cs">
+    <Compile Include="Acumulado\Horometro.aspx.cs">
       <DependentUpon>Horometro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Totalizado\Horometro.aspx.designer.cs">
+    <Compile Include="Acumulado\Horometro.aspx.designer.cs">
       <DependentUpon>Horometro.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Totalizado\Lubricante.aspx.cs">
+    <Compile Include="Acumulado\Lubricante.aspx.cs">
       <DependentUpon>Lubricante.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Totalizado\Lubricante.aspx.designer.cs">
+    <Compile Include="Acumulado\Lubricante.aspx.designer.cs">
       <DependentUpon>Lubricante.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Totalizado\Soda.aspx.cs">
+    <Compile Include="Acumulado\Soda.aspx.cs">
       <DependentUpon>Soda.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Totalizado\Soda.aspx.designer.cs">
+    <Compile Include="Acumulado\Soda.aspx.designer.cs">
       <DependentUpon>Soda.aspx</DependentUpon>
     </Compile>
   </ItemGroup>

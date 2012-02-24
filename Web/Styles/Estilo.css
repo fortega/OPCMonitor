@@ -46,6 +46,8 @@ div.hideSkiplink
 div.menu
 {
     padding: 2px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 div.menu ul
@@ -86,5 +88,14 @@ div.menu ul li a:active
 {
     margin-left: auto;
     margin-right: auto;
-    text-align: left;
+    text-align: center;
+}
+
+#login
+{
+    font-size: 8px;
+    text-align: right;
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
 }
