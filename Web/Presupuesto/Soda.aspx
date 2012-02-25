@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Presupuesto Diario de Lubricante" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Lubricante.aspx.cs" Inherits="Web.Presupuesto.Lubricante" %>
+﻿<%@ Page Title="Presupuesto Diario de Soda" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="soda.aspx.cs" Inherits="Web.Presupuesto.soda" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -31,7 +31,7 @@
                 </td>
             </tr>
             <tr>
-                <td>Linea 1</td>
+                <td>Est 1 Lav 1</td>
                 <td>
                     <asp:TextBox ID="tbLinea1" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfv1" runat="server" ErrorMessage="*"
@@ -42,7 +42,7 @@
                 </td>
             </tr>
             <tr>
-                <td>Linea 2</td>
+                <td>Est 2 Lav 1</td>
                 <td>
                 <asp:TextBox ID="tbLinea2" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfv2" runat="server" ErrorMessage="*"
@@ -53,7 +53,7 @@
                 </td>
             </tr>
             <tr>
-                <td>Linea 3</td>
+                <td>Est 1 Lav 2</td>
                 <td>
                     <asp:TextBox ID="tbLinea3" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfv3" runat="server" ErrorMessage="*"
@@ -64,7 +64,7 @@
                 </td>
             </tr>
             <tr>
-                <td>Linea 4</td>
+                <td>Est 2 Lav 2</td>
                 <td>
                     <asp:TextBox ID="tbLinea4" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfv4" runat="server" ErrorMessage="*" 
@@ -74,7 +74,7 @@
                         ValidationExpression="\d{1,5}" ValidationGroup="crear" /></td>
             </tr>
             <tr>
-                <td>Linea 5</td>
+                <td>Est 1 Lav 4</td>
                 <td>
                     <asp:TextBox ID="tbLinea5" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfv5" runat="server" ErrorMessage="*" 
@@ -85,24 +85,13 @@
                 </td>
             </tr>
             <tr>
-                <td>Linea 6</td>
+                <td>Est 2 Lav 4</td>
                 <td>
                     <asp:TextBox ID="tbLinea6" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfv6" runat="server" ErrorMessage="*" 
                         ControlToValidate="tbLinea6" ValidationGroup="crear" />
                     <asp:RegularExpressionValidator ID="rev6" runat="server" 
                         ControlToValidate="tbLinea6" ErrorMessage="Numero Invalido" 
-                        ValidationExpression="\d{1,5}" ValidationGroup="crear" />
-                </td>
-            </tr>
-            <tr>
-                <td>Linea 7</td>
-                <td>
-                    <asp:TextBox ID="tbLinea7" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfv7" runat="server" ErrorMessage="*" 
-                        ControlToValidate="tbLinea7" ValidationGroup="crear" />
-                    <asp:RegularExpressionValidator ID="rev7" runat="server" 
-                        ControlToValidate="tbLinea7" ErrorMessage="Numero Invalido" 
                         ValidationExpression="\d{1,5}" ValidationGroup="crear" />
                 </td>
             </tr>
@@ -129,36 +118,23 @@
                 SortExpression="Mes" />
             <asp:BoundField DataField="Ani" HeaderText="Año" ReadOnly="True" 
                 SortExpression="Ani" />
-            <asp:BoundField DataField="Lubricante1" HeaderText="Linea 1" 
-                SortExpression="Lubricante1" />
-            <asp:BoundField DataField="Lubricante2" HeaderText="Linea 2" 
-                SortExpression="Lubricante2" />
-            <asp:BoundField DataField="Lubricante3" HeaderText="Linea 3" 
-                SortExpression="Lubricante3" />
-            <asp:BoundField DataField="Lubricante4" HeaderText="Linea 4" 
-                SortExpression="Lubricante4" />
-            <asp:BoundField DataField="Lubricante5" HeaderText="Linea 5" 
-                SortExpression="Lubricante5" />
-            <asp:BoundField DataField="Lubricante6" HeaderText="Linea 6" 
-                SortExpression="Lubricante6" />
-            <asp:BoundField DataField="Lubricante7" HeaderText="Linea 7" 
-                SortExpression="Lubricante7" />
+            <asp:BoundField DataField="soda1" HeaderText="Est 1 Lav 1" 
+                SortExpression="soda1" />
+            <asp:BoundField DataField="soda2" HeaderText="Est 2 Lav 1" 
+                SortExpression="soda2" />
+            <asp:BoundField DataField="soda3" HeaderText="Est 1 Lav 2" 
+                SortExpression="soda3" />
+            <asp:BoundField DataField="soda4" HeaderText="Est 2 Lav 2" 
+                SortExpression="soda4" />
+            <asp:BoundField DataField="soda5" HeaderText="Est 1 Lav 4" 
+                SortExpression="soda5" />
+            <asp:BoundField DataField="soda6" HeaderText="Est 2 Lav 4" 
+                SortExpression="soda6" />
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="ds" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>" SelectCommand="select Mes,Ani,Lubricante1,Lubricante2,Lubricante3,Lubricante4,Lubricante5,Lubricante6,Lubricante7,Mes*10000+Ani as MesAni
-from pre.lubricante
+        ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>" SelectCommand="select Mes,Ani,soda1,soda2,soda3,soda4,soda5,soda6,Mes*10000+Ani as MesAni
+from pre.soda
 order by Mes,Ani" >
-        <InsertParameters>
-            <asp:Parameter Name="Mes" />
-            <asp:Parameter Name="Ani" />
-            <asp:Parameter Name="Lubricante1" />
-            <asp:Parameter Name="Lubricante2" />
-            <asp:Parameter Name="Lubricante3" />
-            <asp:Parameter Name="Lubricante4" />
-            <asp:Parameter Name="Lubricante5" />
-            <asp:Parameter Name="Lubricante6" />
-            <asp:Parameter Name="Lubricante7" />
-        </InsertParameters>
     </asp:SqlDataSource>
 </asp:Content>

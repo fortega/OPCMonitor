@@ -91,6 +91,11 @@ div.menu ul li a:active
     text-align: center;
 }
 
+td
+{
+    text-align: center;
+}
+
 #login
 {
     font-size: 8px;

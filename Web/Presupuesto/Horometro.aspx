@@ -1,8 +1,8 @@
-﻿<%@ Page Title="Presupuesto Diario de Lubricante" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Lubricante.aspx.cs" Inherits="Web.Presupuesto.Lubricante" %>
+﻿<%@ Page Title="Presupuesto Diario de Horometro" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Horometro.aspx.cs" Inherits="Web.Presupuesto.Horometro" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Crear</h2>
+<h2>Crear</h2>
     <table>
         <tbody>
             <tr>
@@ -129,36 +129,36 @@
                 SortExpression="Mes" />
             <asp:BoundField DataField="Ani" HeaderText="Año" ReadOnly="True" 
                 SortExpression="Ani" />
-            <asp:BoundField DataField="Lubricante1" HeaderText="Linea 1" 
-                SortExpression="Lubricante1" />
-            <asp:BoundField DataField="Lubricante2" HeaderText="Linea 2" 
-                SortExpression="Lubricante2" />
-            <asp:BoundField DataField="Lubricante3" HeaderText="Linea 3" 
-                SortExpression="Lubricante3" />
-            <asp:BoundField DataField="Lubricante4" HeaderText="Linea 4" 
-                SortExpression="Lubricante4" />
-            <asp:BoundField DataField="Lubricante5" HeaderText="Linea 5" 
-                SortExpression="Lubricante5" />
-            <asp:BoundField DataField="Lubricante6" HeaderText="Linea 6" 
-                SortExpression="Lubricante6" />
-            <asp:BoundField DataField="Lubricante7" HeaderText="Linea 7" 
-                SortExpression="Lubricante7" />
+            <asp:BoundField DataField="horometro1" HeaderText="Linea 1" 
+                SortExpression="horometro1" />
+            <asp:BoundField DataField="horometro2" HeaderText="Linea 2" 
+                SortExpression="horometro2" />
+            <asp:BoundField DataField="horometro3" HeaderText="Linea 3" 
+                SortExpression="horometro3" />
+            <asp:BoundField DataField="horometro4" HeaderText="Linea 4" 
+                SortExpression="horometro4" />
+            <asp:BoundField DataField="horometro5" HeaderText="Linea 5" 
+                SortExpression="horometro5" />
+            <asp:BoundField DataField="horometro6" HeaderText="Linea 6" 
+                SortExpression="horometro6" />
+            <asp:BoundField DataField="horometro7" HeaderText="Linea 7" 
+                SortExpression="horometro7" />
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="ds" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>" SelectCommand="select Mes,Ani,Lubricante1,Lubricante2,Lubricante3,Lubricante4,Lubricante5,Lubricante6,Lubricante7,Mes*10000+Ani as MesAni
-from pre.lubricante
+        ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>" SelectCommand="select Mes,Ani,horometro1,horometro2,horometro3,horometro4,horometro5,horometro6,horometro7,Mes*10000+Ani as MesAni
+from pre.horometro
 order by Mes,Ani" >
         <InsertParameters>
             <asp:Parameter Name="Mes" />
             <asp:Parameter Name="Ani" />
-            <asp:Parameter Name="Lubricante1" />
-            <asp:Parameter Name="Lubricante2" />
-            <asp:Parameter Name="Lubricante3" />
-            <asp:Parameter Name="Lubricante4" />
-            <asp:Parameter Name="Lubricante5" />
-            <asp:Parameter Name="Lubricante6" />
-            <asp:Parameter Name="Lubricante7" />
+            <asp:Parameter Name="horometro1" />
+            <asp:Parameter Name="horometro2" />
+            <asp:Parameter Name="horometro3" />
+            <asp:Parameter Name="horometro4" />
+            <asp:Parameter Name="horometro5" />
+            <asp:Parameter Name="horometro6" />
+            <asp:Parameter Name="horometro7" />
         </InsertParameters>
     </asp:SqlDataSource>
 </asp:Content>

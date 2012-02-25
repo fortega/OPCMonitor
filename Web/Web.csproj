@@ -67,7 +67,11 @@
     <Content Include="Instantaneo\Horometro.aspx" />
     <Content Include="Instantaneo\Lubricante.aspx" />
     <Content Include="Instantaneo\Soda.aspx" />
+    <Content Include="Presupuesto\Aditivo.aspx" />
+    <Content Include="Presupuesto\Agua.aspx" />
+    <Content Include="Presupuesto\Horometro.aspx" />
     <Content Include="Presupuesto\Lubricante.aspx" />
+    <Content Include="Presupuesto\Soda.aspx" />
     <Content Include="Styles\Estilo.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
@@ -205,12 +209,40 @@
       <DependentUpon>Soda.aspx</DependentUpon>
     </Compile>
     <Compile Include="OPCProvider.cs" />
+    <Compile Include="Presupuesto\Aditivo.aspx.cs">
+      <DependentUpon>Aditivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presupuesto\Aditivo.aspx.designer.cs">
+      <DependentUpon>Aditivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presupuesto\Agua.aspx.cs">
+      <DependentUpon>Agua.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presupuesto\Agua.aspx.designer.cs">
+      <DependentUpon>Agua.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presupuesto\Horometro.aspx.cs">
+      <DependentUpon>Horometro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presupuesto\Horometro.aspx.designer.cs">
+      <DependentUpon>Horometro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presupuesto\Lubricante.aspx.cs">
       <DependentUpon>Lubricante.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presupuesto\Lubricante.aspx.designer.cs">
       <DependentUpon>Lubricante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presupuesto\Soda.aspx.cs">
+      <DependentUpon>Soda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presupuesto\Soda.aspx.designer.cs">
+      <DependentUpon>Soda.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

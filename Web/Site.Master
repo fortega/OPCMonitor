@@ -34,7 +34,6 @@
         <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
             IncludeStyleBlock="false" Orientation="Horizontal" Width="960px">
             <Items>
-                <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Inicio" />
                 <asp:MenuItem Text="Instantaneos">
                     <asp:MenuItem NavigateUrl="~/Instantaneo/Aditivo.aspx" Text="Aditivo"></asp:MenuItem>
                     <asp:MenuItem NavigateUrl="~/Instantaneo/Agua.aspx" Text="Agua"></asp:MenuItem>
@@ -57,7 +56,11 @@
                     <asp:MenuItem NavigateUrl="~/Diario/Soda.aspx" Text="Soda"></asp:MenuItem>
                 </asp:MenuItem>
                 <asp:MenuItem Text="Presupuesto">
+                    <asp:MenuItem NavigateUrl="~/Presupuesto/Aditivo.aspx" Text="Aditivo"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/Presupuesto/Agua.aspx" Text="Agua"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/Presupuesto/Horometro.aspx" Text="Horometro"></asp:MenuItem>
                     <asp:MenuItem NavigateUrl="~/Presupuesto/Lubricante.aspx" Text="Lubricante"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/Presupuesto/Soda.aspx" Text="Soda"></asp:MenuItem>
                 </asp:MenuItem>
                 <asp:MenuItem Text="Imprimir" NavigateUrl="javascript:imprimir();" 
                     Selected="True" />
