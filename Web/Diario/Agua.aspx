@@ -1,10 +1,11 @@
-﻿<%@ Page Title="Consumo Diario de Lubricante" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
-    CodeBehind="Lubricante.aspx.cs" Inherits="Web.Diario.Lubricante" %>
+﻿<%@ Page Title="Consumo Diario de Agua" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+    CodeBehind="Agua.aspx.cs" Inherits="Web.Diario.Agua" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Fecha:</h2>
+    <h2>
+        Fecha:</h2>
     <asp:DropDownList ID="ddlFecha" runat="server" DataSourceID="dsFechas" DataTextField="dia"
         DataTextFormatString="{0:MMMM yyyy}" DataValueField="MesAni" AutoPostBack="True">
     </asp:DropDownList>
@@ -81,7 +82,7 @@
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="dsFechas" runat="server" ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>"
-        SelectCommand="select min(dia) as dia,month(dia)*10000+year(dia) as MesAni from ins.lubricante
+        SelectCommand="select min(dia) as dia,month(dia)*10000+year(dia) as MesAni from ins.agua
 group by month(dia),year(dia)
 order by dia desc"></asp:SqlDataSource>
     <asp:SqlDataSource ID="dsDatos" runat="server" ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>"
@@ -89,50 +90,50 @@ order by dia desc"></asp:SqlDataSource>
 [10],[11],[12],[13],[14],[15],[16],[17],[18],[19],
 [20],[21],[22],[23],[24],[25],[26],[27],[28],[29],
 [30],[31] from (
-select 'L1' as linea,day(dia) as dia,sum(lubricante1) as dato
-from ins.lubricante
+select 'L1' as linea,day(dia) as dia,sum(agua1) as dato
+from ins.agua
 where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia
 
 union all
 
-select 'L2' as linea,day(dia) as dia,sum(lubricante2) as dato
-from ins.lubricante
+select 'L2' as linea,day(dia) as dia,sum(agua2) as dato
+from ins.agua
 where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia
 
 union all
 
-select 'L3' as linea,day(dia) as dia,sum(lubricante3) as dato
-from ins.lubricante
+select 'L3' as linea,day(dia) as dia,sum(agua3) as dato
+from ins.agua
 where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia
 
 union all
 
-select 'L4' as linea,day(dia) as dia,sum(lubricante4) as dato
-from ins.lubricante
+select 'L4' as linea,day(dia) as dia,sum(agua4) as dato
+from ins.agua
 where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia
 
 union all
 
-select 'L5' as linea,day(dia) as dia,sum(lubricante5) as dato
-from ins.lubricante
+select 'L5' as linea,day(dia) as dia,sum(agua5) as dato
+from ins.agua
 where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia
 
 union all
 
-select 'L6' as linea,day(dia) as dia,sum(lubricante6) as dato
-from ins.lubricante
+select 'L6' as linea,day(dia) as dia,sum(agua6) as dato
+from ins.agua
 where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia
 
 union all
 
-select 'L7' as linea,day(dia) as dia,sum(lubricante7) as dato
-from ins.lubricante
+select 'L7' as linea,day(dia) as dia,sum(agua7) as dato
+from ins.agua
 where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia) as d
 pivot (sum(dato) for dia in ([1],[2],[3],[4],[5],[6],[7],[8],[9],
@@ -145,14 +146,14 @@ pivot (sum(dato) for dia in ([1],[2],[3],[4],[5],[6],[7],[8],[9],
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="dsGrafico" runat="server" ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>"
         SelectCommand="select dia,
-sum(lubricante1) as Linea1,
-sum(lubricante2) as Linea2,
-sum(lubricante3) as Linea3,
-sum(lubricante4) as Linea4,
-sum(lubricante5) as Linea5,
-sum(lubricante6) as Linea6,
-sum(lubricante7) as Linea7
-from ins.lubricante
+sum(agua1) as Linea1,
+sum(agua2) as Linea2,
+sum(agua3) as Linea3,
+sum(agua4) as Linea4,
+sum(agua5) as Linea5,
+sum(agua6) as Linea6,
+sum(agua7) as Linea7
+from ins.agua
 where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia">
         <SelectParameters>

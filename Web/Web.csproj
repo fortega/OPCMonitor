@@ -57,7 +57,11 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="Diario\Aditivo.aspx" />
+    <Content Include="Diario\Agua.aspx" />
+    <Content Include="Diario\Horometro.aspx" />
     <Content Include="Diario\Lubricante.aspx" />
+    <Content Include="Diario\Soda.aspx" />
     <Content Include="Instantaneo\Aditivo.aspx" />
     <Content Include="Instantaneo\Agua.aspx" />
     <Content Include="Instantaneo\Horometro.aspx" />
@@ -127,12 +131,40 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Diario\Aditivo.aspx.cs">
+      <DependentUpon>Aditivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Diario\Aditivo.aspx.designer.cs">
+      <DependentUpon>Aditivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Diario\Agua.aspx.cs">
+      <DependentUpon>Agua.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Diario\Agua.aspx.designer.cs">
+      <DependentUpon>Agua.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Diario\Horometro.aspx.cs">
+      <DependentUpon>Horometro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Diario\Horometro.aspx.designer.cs">
+      <DependentUpon>Horometro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Diario\Lubricante.aspx.cs">
       <DependentUpon>Lubricante.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Diario\Lubricante.aspx.designer.cs">
       <DependentUpon>Lubricante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Diario\Soda.aspx.cs">
+      <DependentUpon>Soda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Diario\Soda.aspx.designer.cs">
+      <DependentUpon>Soda.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -1,59 +1,71 @@
-﻿<%@ Page Title="Informe Operativo - Horometro Instantaneo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Horometro.aspx.cs" Inherits="Web.Instantaneo.Horometro" %>
+﻿<%@ Page Title="Cuenta Instantanea de Horometro" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Horometro.aspx.cs" Inherits="Web.Instantaneo.Horometro" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 <h2>Fecha</h2>
-    <asp:Calendar ID="cal" runat="server" FirstDayOfWeek="Monday" CssClass="center"></asp:Calendar>
+    <asp:Calendar ID="cal" runat="server" FirstDayOfWeek="Monday" 
+        CssClass="centerTable"></asp:Calendar>
     <h3>Datos</h3>
-    <asp:Chart ID="chart" runat="server" DataSourceID="ds" Width="900" Height="200">
+    <asp:Chart ID="chart" runat="server" DataSourceID="ds"  Width="960" Height="231">
         <Series>
-            <asp:Series ChartType="Line" Name="Horometro1" XValueMember="Hora" 
-                YValueMembers="Horometro1">
+            <asp:Series ChartType="Line" Name="L1" XValueMember="Hora" 
+                YValueMembers="horometro1" BorderWidth="3" Legend="Legend1">
             </asp:Series>
-            <asp:Series ChartType="Line" Name="Horometro2" XValueMember="Hora" 
-                YValueMembers="Horometro2">
+            <asp:Series ChartType="Line" Name="L2" XValueMember="Hora" 
+                YValueMembers="horometro2" BorderWidth="3" Legend="Legend1">
             </asp:Series>
-            <asp:Series ChartType="Line" Name="Horometro3" XValueMember="Hora" 
-                YValueMembers="Horometro3">
+            <asp:Series ChartType="Line" Name="L3" XValueMember="Hora" 
+                YValueMembers="horometro3" BorderWidth="3" Legend="Legend1">
             </asp:Series>
-            <asp:Series ChartType="Line" Name="Horometro4" XValueMember="Hora" 
-                YValueMembers="Horometro4">
+            <asp:Series ChartType="Line" Name="L4" XValueMember="Hora" 
+                YValueMembers="horometro4" BorderWidth="3" Legend="Legend1">
             </asp:Series>
-            <asp:Series ChartType="Line" Name="Horometro5" XValueMember="Hora" 
-                YValueMembers="Horometro5">
+            <asp:Series ChartType="Line" Name="L5" XValueMember="Hora" 
+                YValueMembers="horometro5" BorderWidth="3" Legend="Legend1">
             </asp:Series>
-            <asp:Series ChartType="Line" Name="Horometro6" XValueMember="Hora" 
-                YValueMembers="Horometro6">
+            <asp:Series ChartType="Line" Name="L6" XValueMember="Hora" 
+                YValueMembers="horometro6" BorderWidth="3" Legend="Legend1">
             </asp:Series>
-            <asp:Series ChartType="Line" Name="Horometro7" XValueMember="Hora" 
-                YValueMembers="Horometro7">
+            <asp:Series ChartType="Line" Name="L7" XValueMember="Hora" 
+                YValueMembers="horometro7" BorderWidth="3" Legend="Legend1">
             </asp:Series>
         </Series>
         <ChartAreas>
             <asp:ChartArea Name="ChartArea1">
-                <AxisX Interval="1" IntervalType="Hours">
+                <AxisX Interval="1" IntervalType="Hours" IsMarginVisible="false">
                 <LabelStyle Format="{0:HH:mm}" />
                 </AxisX>
             </asp:ChartArea>
         </ChartAreas>
+        <Legends>
+            <asp:Legend Alignment="Center" Docking="Bottom" Name="Legend1" 
+                TableStyle="Wide">
+            </asp:Legend>
+        </Legends>
     </asp:Chart>
     <asp:GridView ID="gv" runat="server" AutoGenerateColumns="False" 
-        DataKeyNames="Hora" DataSourceID="ds" CssClass="center">
+        DataKeyNames="Hora" DataSourceID="ds" CssClass="center" Width="960">
         <Columns>
             <asp:BoundField DataField="Hora" DataFormatString="{0:HH:mm}" HeaderText="Hora" 
                 ReadOnly="True" SortExpression="Hora" />
-            <asp:BoundField DataField="Horometro1" HeaderText="Horometro1" SortExpression="Horometro1" />
-            <asp:BoundField DataField="Horometro2" HeaderText="Horometro2" SortExpression="Horometro2" />
-            <asp:BoundField DataField="Horometro3" HeaderText="Horometro3" SortExpression="Horometro3" />
-            <asp:BoundField DataField="Horometro4" HeaderText="Horometro4" SortExpression="Horometro4" />
-            <asp:BoundField DataField="Horometro5" HeaderText="Horometro5" SortExpression="Horometro5" />
-            <asp:BoundField DataField="Horometro6" HeaderText="Horometro6" SortExpression="Horometro6" />
-            <asp:BoundField DataField="Horometro7" HeaderText="Horometro7" SortExpression="Horometro7" />
+            <asp:BoundField DataField="horometro1" HeaderText="Linea 1" SortExpression="horometro1" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="horometro2" HeaderText="Linea 2" SortExpression="horometro2" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="horometro3" HeaderText="Linea 3" SortExpression="horometro3" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="horometro4" HeaderText="Linea 4" SortExpression="horometro4" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="horometro5" HeaderText="Linea 5" SortExpression="horometro5" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="horometro6" HeaderText="Linea 6" SortExpression="horometro6" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="horometro7" HeaderText="Linea 7" SortExpression="horometro7" DataFormatString="{0:#,0}" />
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="ds" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>" SelectCommand="select Hora,Dia,Horometro1,Horometro2,Horometro3,Horometro4,Horometro5,Horometro6,Horometro7 from ins.Horometro
-where Dia = @dia
+        ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>" SelectCommand="select min(hora) as hora,
+sum(horometro1) as horometro1,sum(horometro2) as horometro2,
+sum(horometro3) as horometro3,sum(horometro4) as horometro4,
+sum(horometro5) as horometro5,sum(horometro6) as horometro6,
+sum(horometro7) as horometro7
+from ins.horometro
+where dia = @dia
+group by datepart(hh,hora)
 order by hora">
         <SelectParameters>
             <asp:ControlParameter ControlID="cal" Name="dia" PropertyName="SelectedDate" />

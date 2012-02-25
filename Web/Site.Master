@@ -50,7 +50,11 @@
                     <asp:MenuItem NavigateUrl="~/Acumulado/Soda.aspx" Text="Soda"></asp:MenuItem>
                 </asp:MenuItem>
                 <asp:MenuItem Text="Diario">
+                    <asp:MenuItem NavigateUrl="~/Diario/Aditivo.aspx" Text="Aditivo"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/Diario/Agua.aspx" Text="Agua"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/Diario/Horometro.aspx" Text="Horometro"></asp:MenuItem>
                     <asp:MenuItem NavigateUrl="~/Diario/Lubricante.aspx" Text="Lubricante"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/Diario/Soda.aspx" Text="Soda"></asp:MenuItem>
                 </asp:MenuItem>
                 <asp:MenuItem Text="Presupuesto">
                     <asp:MenuItem NavigateUrl="~/Presupuesto/Lubricante.aspx" Text="Lubricante"></asp:MenuItem>

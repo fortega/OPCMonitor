@@ -7,55 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Web.Totalizado {
+namespace Web.Diario {
     
     
     public partial class Soda {
         
         /// <summary>
-        /// calInicio control.
+        /// ddlFecha control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar calInicio;
+        protected global::System.Web.UI.WebControls.DropDownList ddlFecha;
         
         /// <summary>
-        /// calFin control.
+        /// Chart1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar calFin;
-        
-        /// <summary>
-        /// charResumen control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.DataVisualization.Charting.Chart charResumen;
-        
-        /// <summary>
-        /// gvDetalle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvDetalle;
-        
-        /// <summary>
-        /// chart control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.DataVisualization.Charting.Chart chart;
+        protected global::System.Web.UI.DataVisualization.Charting.Chart Chart1;
         
         /// <summary>
         /// gv control.
@@ -67,21 +40,30 @@ namespace Web.Totalizado {
         protected global::System.Web.UI.WebControls.GridView gv;
         
         /// <summary>
-        /// ds control.
+        /// dsFechas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ds;
+        protected global::System.Web.UI.WebControls.SqlDataSource dsFechas;
         
         /// <summary>
-        /// dsResumen control.
+        /// dsDatos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dsResumen;
+        protected global::System.Web.UI.WebControls.SqlDataSource dsDatos;
+        
+        /// <summary>
+        /// dsGrafico control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource dsGrafico;
     }
 }

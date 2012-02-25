@@ -2,12 +2,6 @@
     AutoEventWireup="true" CodeBehind="Lubricante.aspx.cs" Inherits="Web.Totalizado.Lubricante" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <style type="text/css">
-        .style1
-        {
-            width: 217px;
-        }
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <table class="centerTable">
@@ -53,11 +47,11 @@
     AutoGenerateColumns="False" CssClass="centerTable" DataSourceID="dsResumen">
         <Columns>
             <asp:BoundField DataField="linea" HeaderText="Linea" ReadOnly="True" 
-                SortExpression="linea" />
+                SortExpression="linea" DataFormatString="{0:#,0}" />
             <asp:BoundField DataField="ppto" HeaderText="Presupuesto" ReadOnly="True" 
-                SortExpression="ppto" />
+                SortExpression="ppto" DataFormatString="{0:#,0}" />
             <asp:BoundField DataField="real" HeaderText="Real" ReadOnly="True" 
-                SortExpression="real" />
+                SortExpression="real" DataFormatString="{0:#,0}" />
         </Columns>
     </asp:GridView>
     <h2>
@@ -95,13 +89,13 @@
         <Columns>
             <asp:BoundField DataField="Dia" DataFormatString="{0:dd-MM-yyyy}" HeaderText="Dia"
                 SortExpression="Dia" />
-            <asp:BoundField DataField="Lubricante1" HeaderText="Linea 1" ReadOnly="True" SortExpression="Lubricante1" />
-            <asp:BoundField DataField="Lubricante2" HeaderText="Linea 2" ReadOnly="True" SortExpression="Lubricante2" />
-            <asp:BoundField DataField="Lubricante3" HeaderText="Linea 3" ReadOnly="True" SortExpression="Lubricante3" />
-            <asp:BoundField DataField="Lubricante4" HeaderText="Linea 4" ReadOnly="True" SortExpression="Lubricante4" />
-            <asp:BoundField DataField="Lubricante5" HeaderText="Linea 5" ReadOnly="True" SortExpression="Lubricante5" />
-            <asp:BoundField DataField="Lubricante6" HeaderText="Linea 6" ReadOnly="True" SortExpression="Lubricante6" />
-            <asp:BoundField DataField="Lubricante7" HeaderText="Linea 7" ReadOnly="True" SortExpression="Lubricante7" />
+            <asp:BoundField DataField="Lubricante1" HeaderText="Linea 1" ReadOnly="True" SortExpression="Lubricante1" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="Lubricante2" HeaderText="Linea 2" ReadOnly="True" SortExpression="Lubricante2" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="Lubricante3" HeaderText="Linea 3" ReadOnly="True" SortExpression="Lubricante3" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="Lubricante4" HeaderText="Linea 4" ReadOnly="True" SortExpression="Lubricante4" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="Lubricante5" HeaderText="Linea 5" ReadOnly="True" SortExpression="Lubricante5" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="Lubricante6" HeaderText="Linea 6" ReadOnly="True" SortExpression="Lubricante6" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="Lubricante7" HeaderText="Linea 7" ReadOnly="True" SortExpression="Lubricante7" DataFormatString="{0:#,0}" />
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="ds" runat="server" ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>"
