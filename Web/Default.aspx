@@ -7,5 +7,5 @@
     <h2>
         Bienvenido
     </h2>
-    Utilize el menu superior para ver distintos informes
+    Utilice el menu superior para ver distintos informes
 </asp:Content>
