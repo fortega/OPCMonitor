@@ -129,19 +129,19 @@
                 SortExpression="Mes" />
             <asp:BoundField DataField="Ani" HeaderText="Año" ReadOnly="True" 
                 SortExpression="Ani" />
-            <asp:BoundField DataField="Lubricante1" HeaderText="Linea 1" 
+            <asp:BoundField DataField="Lubricante1" HeaderText="Linea 1 (Lts)" 
                 SortExpression="Lubricante1" />
-            <asp:BoundField DataField="Lubricante2" HeaderText="Linea 2" 
+            <asp:BoundField DataField="Lubricante2" HeaderText="Linea 2 (Lts)" 
                 SortExpression="Lubricante2" />
-            <asp:BoundField DataField="Lubricante3" HeaderText="Linea 3" 
+            <asp:BoundField DataField="Lubricante3" HeaderText="Linea 3 (Lts)" 
                 SortExpression="Lubricante3" />
-            <asp:BoundField DataField="Lubricante4" HeaderText="Linea 4" 
+            <asp:BoundField DataField="Lubricante4" HeaderText="Linea 4 (Lts)" 
                 SortExpression="Lubricante4" />
-            <asp:BoundField DataField="Lubricante5" HeaderText="Linea 5" 
+            <asp:BoundField DataField="Lubricante5" HeaderText="Linea 5 (Lts)" 
                 SortExpression="Lubricante5" />
-            <asp:BoundField DataField="Lubricante6" HeaderText="Linea 6" 
+            <asp:BoundField DataField="Lubricante6" HeaderText="Linea 6 (Lts)" 
                 SortExpression="Lubricante6" />
-            <asp:BoundField DataField="Lubricante7" HeaderText="Linea 7" 
+            <asp:BoundField DataField="Lubricante7" HeaderText="Linea 7 (Lts)" 
                 SortExpression="Lubricante7" />
         </Columns>
     </asp:GridView>

@@ -30,10 +30,11 @@
     </table>
     <asp:Chart ID="charResumen" runat="server" DataSourceID="dsResumen" Width="960" Height="231">
         <Series>
-            <asp:Series Name="Real" XValueMember="linea" YValueMembers="real" Legend="Legend1">
+            <asp:Series Name="Real" XValueMember="linea" YValueMembers="real" Legend="Legend1"
+                IsValueShownAsLabel="True" LabelFormat="{0:#,0}">
             </asp:Series>
-            <asp:Series ChartArea="ChartArea1" Name="Presupuesto" XValueMember="linea" YValueMembers="ppto"
-                Legend="Legend1">
+            <asp:Series Name="Presupuesto" XValueMember="linea" YValueMembers="ppto" Legend="Legend1"
+                IsValueShownAsLabel="True" LabelFormat="{0:#,0}">
             </asp:Series>
         </Series>
         <ChartAreas>
@@ -45,15 +46,15 @@
             </asp:Legend>
         </Legends>
     </asp:Chart>
-    <asp:GridView ID="gvDetalle" runat="server" Width="480px" 
-    AutoGenerateColumns="False" CssClass="centerTable" DataSourceID="dsResumen">
+    <asp:GridView ID="gvDetalle" runat="server" Width="480px" AutoGenerateColumns="False"
+        CssClass="centerTable" DataSourceID="dsResumen">
         <Columns>
-            <asp:BoundField DataField="linea" HeaderText="Linea" ReadOnly="True" 
-                SortExpression="linea" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="ppto" HeaderText="Presupuesto" ReadOnly="True" 
-                SortExpression="ppto" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="real" HeaderText="Real" ReadOnly="True" 
-                SortExpression="real" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="linea" HeaderText="Linea" ReadOnly="True" SortExpression="linea"
+                DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="ppto" HeaderText="Presupuesto" ReadOnly="True" SortExpression="ppto"
+                DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="real" HeaderText="Real" ReadOnly="True" SortExpression="real"
+                DataFormatString="{0:#,0}" />
         </Columns>
     </asp:GridView>
     <h2>
@@ -91,13 +92,20 @@
         <Columns>
             <asp:BoundField DataField="Dia" DataFormatString="{0:dd-MM-yyyy}" HeaderText="Dia"
                 SortExpression="Dia" />
-            <asp:BoundField DataField="agua1" HeaderText="Linea 1" ReadOnly="True" SortExpression="agua1" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="agua2" HeaderText="Linea 2" ReadOnly="True" SortExpression="agua2" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="agua3" HeaderText="Linea 3" ReadOnly="True" SortExpression="agua3" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="agua4" HeaderText="Linea 4" ReadOnly="True" SortExpression="agua4" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="agua5" HeaderText="Linea 5" ReadOnly="True" SortExpression="agua5" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="agua6" HeaderText="Linea 6" ReadOnly="True" SortExpression="agua6" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="agua7" HeaderText="Linea 7" ReadOnly="True" SortExpression="agua7" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="agua1" HeaderText="Linea 1 (Lts)" ReadOnly="True" SortExpression="agua1"
+                DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="agua2" HeaderText="Linea 2 (Lts)" ReadOnly="True" SortExpression="agua2"
+                DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="agua3" HeaderText="Linea 3 (Lts)" ReadOnly="True" SortExpression="agua3"
+                DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="agua4" HeaderText="Linea 4 (Lts)" ReadOnly="True" SortExpression="agua4"
+                DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="agua5" HeaderText="Linea 5 (Lts)" ReadOnly="True" SortExpression="agua5"
+                DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="agua6" HeaderText="Linea 6 (Lts)" ReadOnly="True" SortExpression="agua6"
+                DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="agua7" HeaderText="Linea 7 (Lts)" ReadOnly="True" SortExpression="agua7"
+                DataFormatString="{0:#,0}" />
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="ds" runat="server" ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>"

@@ -26,10 +26,10 @@
     </table>
     <asp:Chart ID="charResumen" runat="server" DataSourceID="dsResumen" Width="960" Height="231">
         <Series>
-            <asp:Series Name="Real" XValueMember="linea" YValueMembers="real" Legend="Legend1">
+            <asp:Series Name="Real" XValueMember="linea" YValueMembers="real" Legend="Legend1" IsValueShownAsLabel="True" LabelFormat="{0:#,0}">
             </asp:Series>
             <asp:Series ChartArea="ChartArea1" Name="Presupuesto" XValueMember="linea" YValueMembers="ppto"
-                Legend="Legend1">
+                Legend="Legend1" IsValueShownAsLabel="True" LabelFormat="{0:#,0}">
             </asp:Series>
         </Series>
         <ChartAreas>
@@ -56,17 +56,17 @@
         Detalle</h2>
     <asp:Chart ID="chart" runat="server" DataSourceID="ds" Width="960" Height="231">
         <Series>
-            <asp:Series ChartType="StackedColumn" Name="L1" XValueMember="Dia" YValueMembers="soda1">
+            <asp:Series ChartType="StackedColumn" Name="E1L1" XValueMember="Dia" YValueMembers="soda1">
             </asp:Series>
-            <asp:Series ChartType="StackedColumn" Name="L2" XValueMember="Dia" YValueMembers="soda2">
+            <asp:Series ChartType="StackedColumn" Name="E2L1" XValueMember="Dia" YValueMembers="soda2">
             </asp:Series>
-            <asp:Series ChartType="StackedColumn" Name="L3" XValueMember="Dia" YValueMembers="soda3">
+            <asp:Series ChartType="StackedColumn" Name="E1L2" XValueMember="Dia" YValueMembers="soda3">
             </asp:Series>
-            <asp:Series ChartType="StackedColumn" Name="L4" XValueMember="Dia" YValueMembers="soda4">
+            <asp:Series ChartType="StackedColumn" Name="E2L2" XValueMember="Dia" YValueMembers="soda4">
             </asp:Series>
-            <asp:Series ChartType="StackedColumn" Name="L5" XValueMember="Dia" YValueMembers="soda5">
+            <asp:Series ChartType="StackedColumn" Name="E1L4" XValueMember="Dia" YValueMembers="soda5">
             </asp:Series>
-            <asp:Series ChartType="StackedColumn" Name="L6" XValueMember="Dia" YValueMembers="soda6">
+            <asp:Series ChartType="StackedColumn" Name="E2L4" XValueMember="Dia" YValueMembers="soda6">
             </asp:Series>
         </Series>
         <ChartAreas>
@@ -85,12 +85,12 @@
         <Columns>
             <asp:BoundField DataField="Dia" DataFormatString="{0:dd-MM-yyyy}" HeaderText="Dia"
                 SortExpression="Dia" />
-            <asp:BoundField DataField="soda1" HeaderText="Linea 1" ReadOnly="True" SortExpression="soda1" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="soda2" HeaderText="Linea 2" ReadOnly="True" SortExpression="soda2" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="soda3" HeaderText="Linea 3" ReadOnly="True" SortExpression="soda3" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="soda4" HeaderText="Linea 4" ReadOnly="True" SortExpression="soda4" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="soda5" HeaderText="Linea 5" ReadOnly="True" SortExpression="soda5" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="soda6" HeaderText="Linea 6" ReadOnly="True" SortExpression="soda6" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="soda1" HeaderText="Est 1 Lav 1 (Lts)" ReadOnly="True" SortExpression="soda1" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="soda2" HeaderText="Est 2 Lav 1 (Lts)" ReadOnly="True" SortExpression="soda2" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="soda3" HeaderText="Est 1 Lav 2 (Lts)" ReadOnly="True" SortExpression="soda3" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="soda4" HeaderText="Est 2 Lav 2 (Lts)" ReadOnly="True" SortExpression="soda4" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="soda5" HeaderText="Est 1 Lav 4 (Lts)" ReadOnly="True" SortExpression="soda5" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="soda6" HeaderText="Est 2 Lav 4 (Lts)" ReadOnly="True" SortExpression="soda6" DataFormatString="{0:#,0}" />
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="ds" runat="server" ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>"
@@ -116,7 +116,7 @@ order by Dia">
 	where dia &gt;= @inicio and dia &lt;= @fin
 )
 
-select 'L1' as linea, sum(soda1) as ppto,
+select 'E1L1' as linea, sum(soda1) as ppto,
 (select sum(soda1) from ins.soda where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.soda p
@@ -124,7 +124,7 @@ on month(d.dia) = p.mes and year(d.dia) = p.ani
 
 union all
 
-select 'L2' as linea, sum(soda2) as ppto,
+select 'E2L1' as linea, sum(soda2) as ppto,
 (select sum(soda2) from ins.soda where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.soda p
@@ -132,14 +132,14 @@ on month(d.dia) = p.mes and year(d.dia) = p.ani
 
 union all
 
-select 'L3' as linea, sum(soda3) as ppto,
+select 'E1L2' as linea, sum(soda3) as ppto,
 (select sum(soda3) from ins.soda where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.soda p
 on month(d.dia) = p.mes and year(d.dia) = p.ani
 union all
 
-select 'L4' as linea, sum(soda4) as ppto,
+select 'E2L2' as linea, sum(soda4) as ppto,
 (select sum(soda4) from ins.soda where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.soda p
@@ -147,7 +147,7 @@ on month(d.dia) = p.mes and year(d.dia) = p.ani
 
 union all
 
-select 'L5' as linea, sum(soda5) as ppto,
+select 'E1L4' as linea, sum(soda5) as ppto,
 (select sum(soda5) from ins.soda where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.soda p
@@ -155,7 +155,7 @@ on month(d.dia) = p.mes and year(d.dia) = p.ani
 
 union all
 
-select 'L6' as linea, sum(soda6) as ppto,
+select 'E2L4' as linea, sum(soda6) as ppto,
 (select sum(soda6) from ins.soda where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.soda p

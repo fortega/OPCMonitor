@@ -142,13 +142,13 @@
             </asp:TemplateField>
             <asp:BoundField DataField="Mes" HeaderText="Mes" ReadOnly="True" SortExpression="Mes" />
             <asp:BoundField DataField="Ani" HeaderText="Año" ReadOnly="True" SortExpression="Ani" />
-            <asp:BoundField DataField="agua1" HeaderText="Linea 1" SortExpression="agua1" />
-            <asp:BoundField DataField="agua2" HeaderText="Linea 2" SortExpression="agua2" />
-            <asp:BoundField DataField="agua3" HeaderText="Linea 3" SortExpression="agua3" />
-            <asp:BoundField DataField="agua4" HeaderText="Linea 4" SortExpression="agua4" />
-            <asp:BoundField DataField="agua5" HeaderText="Linea 5" SortExpression="agua5" />
-            <asp:BoundField DataField="agua6" HeaderText="Linea 6" SortExpression="agua6" />
-            <asp:BoundField DataField="agua7" HeaderText="Linea 7" SortExpression="agua7" />
+            <asp:BoundField DataField="agua1" HeaderText="Linea 1 (Lts)" SortExpression="agua1" />
+            <asp:BoundField DataField="agua2" HeaderText="Linea 2 (Lts)" SortExpression="agua2" />
+            <asp:BoundField DataField="agua3" HeaderText="Linea 3 (Lts)" SortExpression="agua3" />
+            <asp:BoundField DataField="agua4" HeaderText="Linea 4 (Lts)" SortExpression="agua4" />
+            <asp:BoundField DataField="agua5" HeaderText="Linea 5 (Lts)" SortExpression="agua5" />
+            <asp:BoundField DataField="agua6" HeaderText="Linea 6 (Lts)" SortExpression="agua6" />
+            <asp:BoundField DataField="agua7" HeaderText="Linea 7 (Lts)" SortExpression="agua7" />
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="ds" runat="server" ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>"

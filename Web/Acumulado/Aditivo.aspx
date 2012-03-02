@@ -26,10 +26,11 @@
     </table>
     <asp:Chart ID="charResumen" runat="server" DataSourceID="dsResumen" Width="960" Height="231">
         <Series>
-            <asp:Series Name="Real" XValueMember="linea" YValueMembers="real" Legend="Legend1">
+            <asp:Series Name="Real" XValueMember="linea" YValueMembers="real" 
+                Legend="Legend1" IsValueShownAsLabel="True" LabelFormat="{0:#,0.0}">
             </asp:Series>
             <asp:Series ChartArea="ChartArea1" Name="Presupuesto" XValueMember="linea" YValueMembers="ppto"
-                Legend="Legend1">
+                Legend="Legend1" IsValueShownAsLabel="True" LabelFormat="{0:#,0.0}">
             </asp:Series>
         </Series>
         <ChartAreas>
@@ -56,17 +57,17 @@
         Detalle</h2>
     <asp:Chart ID="chart" runat="server" DataSourceID="ds" Width="960" Height="231">
         <Series>
-            <asp:Series ChartType="StackedColumn" Name="L1" XValueMember="Dia" YValueMembers="aditivo1">
+            <asp:Series ChartType="StackedColumn" Name="E1L1" XValueMember="Dia" YValueMembers="aditivo1">
             </asp:Series>
-            <asp:Series ChartType="StackedColumn" Name="L2" XValueMember="Dia" YValueMembers="aditivo2">
+            <asp:Series ChartType="StackedColumn" Name="E2L1" XValueMember="Dia" YValueMembers="aditivo2">
             </asp:Series>
-            <asp:Series ChartType="StackedColumn" Name="L3" XValueMember="Dia" YValueMembers="aditivo3">
+            <asp:Series ChartType="StackedColumn" Name="E1L2" XValueMember="Dia" YValueMembers="aditivo3">
             </asp:Series>
-            <asp:Series ChartType="StackedColumn" Name="L4" XValueMember="Dia" YValueMembers="aditivo4">
+            <asp:Series ChartType="StackedColumn" Name="E2L2" XValueMember="Dia" YValueMembers="aditivo4">
             </asp:Series>
-            <asp:Series ChartType="StackedColumn" Name="L5" XValueMember="Dia" YValueMembers="aditivo5">
+            <asp:Series ChartType="StackedColumn" Name="E1L4" XValueMember="Dia" YValueMembers="aditivo5">
             </asp:Series>
-            <asp:Series ChartType="StackedColumn" Name="L6" XValueMember="Dia" YValueMembers="aditivo6">
+            <asp:Series ChartType="StackedColumn" Name="E2L4" XValueMember="Dia" YValueMembers="aditivo6">
             </asp:Series>
         </Series>
         <ChartAreas>
@@ -85,12 +86,12 @@
         <Columns>
             <asp:BoundField DataField="Dia" DataFormatString="{0:dd-MM-yyyy}" HeaderText="Dia"
                 SortExpression="Dia" />
-            <asp:BoundField DataField="aditivo1" HeaderText="Linea 1" ReadOnly="True" SortExpression="aditivo1" DataFormatString="{0:#,0.0}" />
-            <asp:BoundField DataField="aditivo2" HeaderText="Linea 2" ReadOnly="True" SortExpression="aditivo2" DataFormatString="{0:#,0.0}" />
-            <asp:BoundField DataField="aditivo3" HeaderText="Linea 3" ReadOnly="True" SortExpression="aditivo3" DataFormatString="{0:#,0.0}" />
-            <asp:BoundField DataField="aditivo4" HeaderText="Linea 4" ReadOnly="True" SortExpression="aditivo4" DataFormatString="{0:#,0.0}" />
-            <asp:BoundField DataField="aditivo5" HeaderText="Linea 5" ReadOnly="True" SortExpression="aditivo5" DataFormatString="{0:#,0.0}" />
-            <asp:BoundField DataField="aditivo6" HeaderText="Linea 6" ReadOnly="True" SortExpression="aditivo6" DataFormatString="{0:#,0.0}" />
+            <asp:BoundField DataField="aditivo1" HeaderText="Est 1 Lav 1 (Lts)" ReadOnly="True" SortExpression="aditivo1" DataFormatString="{0:#,0.0}" />
+            <asp:BoundField DataField="aditivo2" HeaderText="Est 2 Lav 1 (Lts)" ReadOnly="True" SortExpression="aditivo2" DataFormatString="{0:#,0.0}" />
+            <asp:BoundField DataField="aditivo3" HeaderText="Est 1 Lav 2 (Lts)" ReadOnly="True" SortExpression="aditivo3" DataFormatString="{0:#,0.0}" />
+            <asp:BoundField DataField="aditivo4" HeaderText="Est 2 Lav 2 (Lts)" ReadOnly="True" SortExpression="aditivo4" DataFormatString="{0:#,0.0}" />
+            <asp:BoundField DataField="aditivo5" HeaderText="Est 1 Lav 4 (Lts)" ReadOnly="True" SortExpression="aditivo5" DataFormatString="{0:#,0.0}" />
+            <asp:BoundField DataField="aditivo6" HeaderText="Est 2 Lav 4 (Lts)" ReadOnly="True" SortExpression="aditivo6" DataFormatString="{0:#,0.0}" />
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="ds" runat="server" ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>"
@@ -116,7 +117,7 @@ order by Dia">
 	where dia &gt;= @inicio and dia &lt;= @fin
 )
 
-select 'L1' as linea, sum(aditivo1) as ppto,
+select 'E1L1' as linea, sum(aditivo1) as ppto,
 (select sum(aditivo1) from ins.aditivo where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.aditivo p
@@ -124,7 +125,7 @@ on month(d.dia) = p.mes and year(d.dia) = p.ani
 
 union all
 
-select 'L2' as linea, sum(aditivo2) as ppto,
+select 'E2L1' as linea, sum(aditivo2) as ppto,
 (select sum(aditivo2) from ins.aditivo where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.aditivo p
@@ -132,14 +133,14 @@ on month(d.dia) = p.mes and year(d.dia) = p.ani
 
 union all
 
-select 'L3' as linea, sum(aditivo3) as ppto,
+select 'E1L2' as linea, sum(aditivo3) as ppto,
 (select sum(aditivo3) from ins.aditivo where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.aditivo p
 on month(d.dia) = p.mes and year(d.dia) = p.ani
 union all
 
-select 'L4' as linea, sum(aditivo4) as ppto,
+select 'E2L2' as linea, sum(aditivo4) as ppto,
 (select sum(aditivo4) from ins.aditivo where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.aditivo p
@@ -147,7 +148,7 @@ on month(d.dia) = p.mes and year(d.dia) = p.ani
 
 union all
 
-select 'L5' as linea, sum(aditivo5) as ppto,
+select 'E1L4' as linea, sum(aditivo5) as ppto,
 (select sum(aditivo5) from ins.aditivo where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.aditivo p
@@ -155,7 +156,7 @@ on month(d.dia) = p.mes and year(d.dia) = p.ani
 
 union all
 
-select 'L6' as linea, sum(aditivo6) as ppto,
+select 'E2L4' as linea, sum(aditivo6) as ppto,
 (select sum(aditivo6) from ins.aditivo where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.aditivo p

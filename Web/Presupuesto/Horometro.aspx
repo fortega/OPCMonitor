@@ -129,19 +129,19 @@
                 SortExpression="Mes" />
             <asp:BoundField DataField="Ani" HeaderText="Año" ReadOnly="True" 
                 SortExpression="Ani" />
-            <asp:BoundField DataField="horometro1" HeaderText="Linea 1" 
+            <asp:BoundField DataField="horometro1" HeaderText="Linea 1 (Hrs)" 
                 SortExpression="horometro1" />
-            <asp:BoundField DataField="horometro2" HeaderText="Linea 2" 
+            <asp:BoundField DataField="horometro2" HeaderText="Linea 2 (Hrs)" 
                 SortExpression="horometro2" />
-            <asp:BoundField DataField="horometro3" HeaderText="Linea 3" 
+            <asp:BoundField DataField="horometro3" HeaderText="Linea 3 (Hrs)" 
                 SortExpression="horometro3" />
-            <asp:BoundField DataField="horometro4" HeaderText="Linea 4" 
+            <asp:BoundField DataField="horometro4" HeaderText="Linea 4 (Hrs)" 
                 SortExpression="horometro4" />
-            <asp:BoundField DataField="horometro5" HeaderText="Linea 5" 
+            <asp:BoundField DataField="horometro5" HeaderText="Linea 5 (Hrs)" 
                 SortExpression="horometro5" />
-            <asp:BoundField DataField="horometro6" HeaderText="Linea 6" 
+            <asp:BoundField DataField="horometro6" HeaderText="Linea 6 (Hrs)" 
                 SortExpression="horometro6" />
-            <asp:BoundField DataField="horometro7" HeaderText="Linea 7" 
+            <asp:BoundField DataField="horometro7" HeaderText="Linea 7 (Hrs)" 
                 SortExpression="horometro7" />
         </Columns>
     </asp:GridView>

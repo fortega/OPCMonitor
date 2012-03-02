@@ -48,13 +48,13 @@
         <Columns>
             <asp:BoundField DataField="Hora" DataFormatString="{0:HH:mm}" HeaderText="Hora" 
                 ReadOnly="True" SortExpression="Hora" />
-            <asp:BoundField DataField="Lubricante1" HeaderText="Linea 1" SortExpression="Lubricante1" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="Lubricante2" HeaderText="Linea 2" SortExpression="Lubricante2" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="Lubricante3" HeaderText="Linea 3" SortExpression="Lubricante3" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="Lubricante4" HeaderText="Linea 4" SortExpression="Lubricante4" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="Lubricante5" HeaderText="Linea 5" SortExpression="Lubricante5" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="Lubricante6" HeaderText="Linea 6" SortExpression="Lubricante6" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="Lubricante7" HeaderText="Linea 7" SortExpression="Lubricante7" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="Lubricante1" HeaderText="Linea 1 (Lts)" SortExpression="Lubricante1" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="Lubricante2" HeaderText="Linea 2 (Lts)" SortExpression="Lubricante2" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="Lubricante3" HeaderText="Linea 3 (Lts)" SortExpression="Lubricante3" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="Lubricante4" HeaderText="Linea 4 (Lts)" SortExpression="Lubricante4" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="Lubricante5" HeaderText="Linea 5 (Lts)" SortExpression="Lubricante5" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="Lubricante6" HeaderText="Linea 6 (Lts)" SortExpression="Lubricante6" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="Lubricante7" HeaderText="Linea 7 (Lts)" SortExpression="Lubricante7" DataFormatString="{0:#,0}" />
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="ds" runat="server" 

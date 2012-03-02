@@ -104,3 +104,8 @@ td
     margin-right: auto;
     width: 960px;
 }
+
+.smallSize
+{
+    font-size: 8px;
+}

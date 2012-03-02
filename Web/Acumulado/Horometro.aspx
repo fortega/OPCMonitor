@@ -26,10 +26,10 @@
     </table>
     <asp:Chart ID="charResumen" runat="server" DataSourceID="dsResumen" Width="960" Height="231">
         <Series>
-            <asp:Series Name="Real" XValueMember="linea" YValueMembers="real" Legend="Legend1">
+            <asp:Series Name="Real" XValueMember="linea" YValueMembers="real" Legend="Legend1" IsValueShownAsLabel="True" LabelFormat="{0:#,0}">
             </asp:Series>
             <asp:Series ChartArea="ChartArea1" Name="Presupuesto" XValueMember="linea" YValueMembers="ppto"
-                Legend="Legend1">
+                Legend="Legend1" IsValueShownAsLabel="True" LabelFormat="{0:#,0}">
             </asp:Series>
         </Series>
         <ChartAreas>
@@ -87,13 +87,13 @@
         <Columns>
             <asp:BoundField DataField="Dia" DataFormatString="{0:dd-MM-yyyy}" HeaderText="Dia"
                 SortExpression="Dia" />
-            <asp:BoundField DataField="Horometro1" HeaderText="Linea 1" ReadOnly="True" SortExpression="Horometro1" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="Horometro2" HeaderText="Linea 2" ReadOnly="True" SortExpression="Horometro2" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="Horometro3" HeaderText="Linea 3" ReadOnly="True" SortExpression="Horometro3" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="Horometro4" HeaderText="Linea 4" ReadOnly="True" SortExpression="Horometro4" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="Horometro5" HeaderText="Linea 5" ReadOnly="True" SortExpression="Horometro5" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="Horometro6" HeaderText="Linea 6" ReadOnly="True" SortExpression="Horometro6" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="Horometro7" HeaderText="Linea 7" ReadOnly="True" SortExpression="Horometro7" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="Horometro1" HeaderText="Linea 1 (Hrs)" ReadOnly="True" SortExpression="Horometro1" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="Horometro2" HeaderText="Linea 2 (Hrs)" ReadOnly="True" SortExpression="Horometro2" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="Horometro3" HeaderText="Linea 3 (Hrs)" ReadOnly="True" SortExpression="Horometro3" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="Horometro4" HeaderText="Linea 4 (Hrs)" ReadOnly="True" SortExpression="Horometro4" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="Horometro5" HeaderText="Linea 5 (Hrs)" ReadOnly="True" SortExpression="Horometro5" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="Horometro6" HeaderText="Linea 6 (Hrs)" ReadOnly="True" SortExpression="Horometro6" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="Horometro7" HeaderText="Linea 7 (Hrs)" ReadOnly="True" SortExpression="Horometro7" DataFormatString="{0:#,0}" />
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="ds" runat="server" ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>"

@@ -45,7 +45,7 @@
             </asp:Legend>
         </Legends>
     </asp:Chart>
-    <asp:GridView ID="gv" runat="server" Width="960" AutoGenerateColumns="False" DataSourceID="dsDatos">
+    <asp:GridView ID="gv" runat="server" Width="960" AutoGenerateColumns="False" DataSourceID="dsDatos" CssClass="smallSize">
         <Columns>
             <asp:BoundField DataField="linea" HeaderText="" ReadOnly="True" SortExpression="linea" />
             <asp:BoundField DataField="1" HeaderText="1" ReadOnly="True" SortExpression="1" DataFormatString="{0:#,0}" />

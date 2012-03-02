@@ -48,13 +48,13 @@
         <Columns>
             <asp:BoundField DataField="Hora" DataFormatString="{0:HH:mm}" HeaderText="Hora" 
                 ReadOnly="True" SortExpression="Hora" />
-            <asp:BoundField DataField="horometro1" HeaderText="Linea 1" SortExpression="horometro1" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="horometro2" HeaderText="Linea 2" SortExpression="horometro2" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="horometro3" HeaderText="Linea 3" SortExpression="horometro3" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="horometro4" HeaderText="Linea 4" SortExpression="horometro4" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="horometro5" HeaderText="Linea 5" SortExpression="horometro5" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="horometro6" HeaderText="Linea 6" SortExpression="horometro6" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="horometro7" HeaderText="Linea 7" SortExpression="horometro7" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="horometro1" HeaderText="Linea 1 (Hrs)" SortExpression="horometro1" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="horometro2" HeaderText="Linea 2 (Hrs)" SortExpression="horometro2" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="horometro3" HeaderText="Linea 3 (Hrs)" SortExpression="horometro3" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="horometro4" HeaderText="Linea 4 (Hrs)" SortExpression="horometro4" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="horometro5" HeaderText="Linea 5 (Hrs)" SortExpression="horometro5" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="horometro6" HeaderText="Linea 6 (Hrs)" SortExpression="horometro6" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="horometro7" HeaderText="Linea 7 (Hrs)" SortExpression="horometro7" DataFormatString="{0:#,0}" />
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="ds" runat="server" 
