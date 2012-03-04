@@ -15,8 +15,39 @@ namespace Web.Presupuesto
         {
             if (!Page.IsPostBack)
             {
+                cargarFactor();
                 CargarAños();
                 SeleccionaMes();
+            }
+        }
+
+        void cargarFactor()
+        {
+            using (SqlConnection c =
+                new SqlConnection(ConfigurationManager.ConnectionStrings["OPCMonitorConnectionString"].ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand("select soda from factores", c);
+
+                c.Open();
+                double factor = (double)cmd.ExecuteScalar();
+                c.Close();
+
+                tbFactor.Text = factor.ToString();
+            }
+        }
+
+
+        protected void btnFactor_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection c =
+                new SqlConnection(ConfigurationManager.ConnectionStrings["OPCMonitorConnectionString"].ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand("update factores set soda = @factor", c);
+                cmd.Parameters.Add("factor", System.Data.SqlDbType.Float).Value = float.Parse(tbFactor.Text);
+                
+                c.Open();
+                cmd.ExecuteNonQuery();
+                c.Close();
             }
         }
 

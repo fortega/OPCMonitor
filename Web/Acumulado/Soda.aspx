@@ -94,13 +94,16 @@
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="ds" runat="server" ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>"
-        SelectCommand="select Dia,
-sum(soda1) as soda1,
-sum(soda2) as soda2,
-sum(soda3) as soda3,
-sum(soda4) as soda4,
-sum(soda5) as soda5,
-sum(soda6) as soda6
+        SelectCommand="declare @factor float
+set @factor = (select soda from factores);
+
+select Dia,
+sum(soda1)*@factor as soda1,
+sum(soda2)*@factor as soda2,
+sum(soda3)*@factor as soda3,
+sum(soda4)*@factor as soda4,
+sum(soda5)*@factor as soda5,
+sum(soda6)*@factor as soda6
 from ins.soda
 where Dia between @inicio and @fin
 group by Dia
@@ -111,13 +114,16 @@ order by Dia">
         </SelectParameters>
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="dsResumen" runat="server" ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>"
-        SelectCommand="with dias(dia) as (
+        SelectCommand="declare @factor float
+set @factor = (select soda from factores);
+
+with dias(dia) as (
 	select distinct dia from ins.soda
 	where dia &gt;= @inicio and dia &lt;= @fin
 )
 
 select 'E1L1' as linea, sum(soda1) as ppto,
-(select sum(soda1) from ins.soda where dia &gt;= @inicio and dia &lt;= @fin) as real
+(select sum(soda1)*@factor from ins.soda where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.soda p
 on month(d.dia) = p.mes and year(d.dia) = p.ani
@@ -125,7 +131,7 @@ on month(d.dia) = p.mes and year(d.dia) = p.ani
 union all
 
 select 'E2L1' as linea, sum(soda2) as ppto,
-(select sum(soda2) from ins.soda where dia &gt;= @inicio and dia &lt;= @fin) as real
+(select sum(soda2)*@factor from ins.soda where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.soda p
 on month(d.dia) = p.mes and year(d.dia) = p.ani
@@ -133,14 +139,14 @@ on month(d.dia) = p.mes and year(d.dia) = p.ani
 union all
 
 select 'E1L2' as linea, sum(soda3) as ppto,
-(select sum(soda3) from ins.soda where dia &gt;= @inicio and dia &lt;= @fin) as real
+(select sum(soda3)*@factor from ins.soda where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.soda p
 on month(d.dia) = p.mes and year(d.dia) = p.ani
 union all
 
 select 'E2L2' as linea, sum(soda4) as ppto,
-(select sum(soda4) from ins.soda where dia &gt;= @inicio and dia &lt;= @fin) as real
+(select sum(soda4)*@factor from ins.soda where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.soda p
 on month(d.dia) = p.mes and year(d.dia) = p.ani
@@ -148,7 +154,7 @@ on month(d.dia) = p.mes and year(d.dia) = p.ani
 union all
 
 select 'E1L4' as linea, sum(soda5) as ppto,
-(select sum(soda5) from ins.soda where dia &gt;= @inicio and dia &lt;= @fin) as real
+(select sum(soda5)*@factor from ins.soda where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.soda p
 on month(d.dia) = p.mes and year(d.dia) = p.ani
@@ -156,7 +162,7 @@ on month(d.dia) = p.mes and year(d.dia) = p.ani
 union all
 
 select 'E2L4' as linea, sum(soda6) as ppto,
-(select sum(soda6) from ins.soda where dia &gt;= @inicio and dia &lt;= @fin) as real
+(select sum(soda6)*@factor from ins.soda where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.soda p
 on month(d.dia) = p.mes and year(d.dia) = p.ani">

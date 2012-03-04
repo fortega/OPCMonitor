@@ -13,6 +13,24 @@ namespace Web.Presupuesto {
     public partial class Aditivo {
         
         /// <summary>
+        /// tbFactor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbFactor;
+        
+        /// <summary>
+        /// btnFactor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFactor;
+        
+        /// <summary>
         /// ddlMes control.
         /// </summary>
         /// <remarks>

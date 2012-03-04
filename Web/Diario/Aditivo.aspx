@@ -81,46 +81,49 @@
 group by month(dia),year(dia)
 order by dia desc"></asp:SqlDataSource>
     <asp:SqlDataSource ID="dsDatos" runat="server" ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>"
-        SelectCommand="select linea,[1],[2],[3],[4],[5],[6],[7],[8],[9],
+        SelectCommand="declare @factor float
+set @factor = (select aditivo from factores);
+
+select linea,[1],[2],[3],[4],[5],[6],[7],[8],[9],
 [10],[11],[12],[13],[14],[15],[16],[17],[19],
 [20],[21],[22],[23],[24],[25],[26],[27],[29],
 [30],[31] from (
-select 'Est 1 Lav 1' as linea,day(dia) as dia,sum(aditivo1) as dato
+select 'Est 1 Lav 1' as linea,day(dia) as dia,sum(aditivo1)*@factor as dato
 from ins.aditivo
 where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia
 
 union all
 
-select 'Est 2 Lav 1' as linea,day(dia) as dia,sum(aditivo2) as dato
+select 'Est 2 Lav 1' as linea,day(dia) as dia,sum(aditivo2)*@factor as dato
 from ins.aditivo
 where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia
 
 union all
 
-select 'Est 1 Lav 2' as linea,day(dia) as dia,sum(aditivo3) as dato
+select 'Est 1 Lav 2' as linea,day(dia) as dia,sum(aditivo3)*@factor as dato
 from ins.aditivo
 where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia
 
 union all
 
-select 'Est 2 Lav 2' as linea,day(dia) as dia,sum(aditivo4) as dato
+select 'Est 2 Lav 2' as linea,day(dia) as dia,sum(aditivo4)*@factor as dato
 from ins.aditivo
 where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia
 
 union all
 
-select 'Est 1 Lav 4' as linea,day(dia) as dia,sum(aditivo5) as dato
+select 'Est 1 Lav 4' as linea,day(dia) as dia,sum(aditivo5)*@factor as dato
 from ins.aditivo
 where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia
 
 union all
 
-select 'Est 2 Lav 4' as linea,day(dia) as dia,sum(aditivo6) as dato
+select 'Est 2 Lav 4' as linea,day(dia) as dia,sum(aditivo6)*@factor as dato
 from ins.aditivo
 where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia
@@ -135,13 +138,16 @@ order by substring(linea,11,1),substring(linea,5,1)">
         </SelectParameters>
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="dsGrafico" runat="server" ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>"
-        SelectCommand="select dia,
-sum(aditivo1) as Linea1,
-sum(aditivo2) as Linea2,
-sum(aditivo3) as Linea3,
-sum(aditivo4) as Linea4,
-sum(aditivo5) as Linea5,
-sum(aditivo6) as Linea6
+        SelectCommand="declare @factor float
+set @factor = (select aditivo from factores);
+
+select dia,
+sum(aditivo1)*@factor as Linea1,
+sum(aditivo2)*@factor as Linea2,
+sum(aditivo3)*@factor as Linea3,
+sum(aditivo4)*@factor as Linea4,
+sum(aditivo5)*@factor as Linea5,
+sum(aditivo6)*@factor as Linea6
 from ins.aditivo
 where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia">

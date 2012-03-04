@@ -2,6 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<h2>Factor</h2>
+    <asp:TextBox ID="tbFactor" runat="server"></asp:TextBox>
+    <asp:Button ID="btnFactor" runat="server" Text="Actualizar" 
+        onclick="btnFactor_Click" />
 <h2>Crear</h2>
     <table>
         <tbody>

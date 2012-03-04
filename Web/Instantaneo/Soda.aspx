@@ -54,10 +54,13 @@
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="ds" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>" SelectCommand="select min(hora) as hora,
-sum(soda1) as soda1,sum(soda2) as soda2,
-sum(soda3) as soda3,sum(soda4) as soda4,
-sum(soda5) as soda5,sum(soda6) as soda6
+        ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>" SelectCommand="declare @factor float
+set @factor = (select soda from factores);
+
+select min(hora) as hora,
+sum(soda1)*@factor as soda1,sum(soda2)*@factor as soda2,
+sum(soda3)*@factor as soda3,sum(soda4)*@factor as soda4,
+sum(soda5)*@factor as soda5,sum(soda6)*@factor as soda6
 from ins.soda
 where dia = @dia
 group by datepart(hh,hora)
