@@ -3,7 +3,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 <h2>Factor</h2>
-    <asp:TextBox ID="tbFactor" runat="server"></asp:TextBox>
+    Factor 1: <asp:TextBox ID="tbFactor1" runat="server"></asp:TextBox><br />
+    Factor 2: <asp:TextBox ID="tbFactor2" runat="server"></asp:TextBox><br />
+    Factor 3: <asp:TextBox ID="tbFactor3" runat="server"></asp:TextBox><br />
+    Factor 4: <asp:TextBox ID="tbFactor4" runat="server"></asp:TextBox><br />
+    Factor 5: <asp:TextBox ID="tbFactor5" runat="server"></asp:TextBox><br />
+    Factor 6: <asp:TextBox ID="tbFactor6" runat="server"></asp:TextBox><br />
     <asp:Button ID="btnFactor" runat="server" Text="Actualizar" 
         onclick="btnFactor_Click" />
 <h2>Crear</h2>
