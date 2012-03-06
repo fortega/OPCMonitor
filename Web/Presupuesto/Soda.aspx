@@ -2,8 +2,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Factor</h2>
-    <asp:TextBox ID="tbFactor" runat="server"></asp:TextBox>
+    <h2>Factores</h2>
+    Est 1 Lav 1: <asp:TextBox ID="tbFactor1" runat="server"></asp:TextBox><br />
+    Est 2 Lav 1: <asp:TextBox ID="tbFactor2" runat="server"></asp:TextBox><br />
+    Est 1 Lav 2: <asp:TextBox ID="tbFactor3" runat="server"></asp:TextBox><br />
+    Est 2 Lav 2: <asp:TextBox ID="tbFactor4" runat="server"></asp:TextBox><br />
+    Est 1 Lav 4: <asp:TextBox ID="tbFactor5" runat="server"></asp:TextBox><br />
+    Est 2 Lav 4: <asp:TextBox ID="tbFactor6" runat="server"></asp:TextBox><br />
     <asp:Button ID="btnFactor" runat="server" Text="Actualizar" 
         onclick="btnFactor_Click" />
     <h2>Crear</h2>

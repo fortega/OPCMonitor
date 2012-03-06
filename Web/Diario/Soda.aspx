@@ -81,49 +81,59 @@
 group by month(dia),year(dia)
 order by dia desc"></asp:SqlDataSource>
     <asp:SqlDataSource ID="dsDatos" runat="server" ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>"
-        SelectCommand="declare @factor float
-set @factor = (select soda from factores);
+        SelectCommand="declare @factor1 float
+declare @factor2 float
+declare @factor3 float
+declare @factor4 float
+declare @factor5 float
+declare @factor6 float
+set @factor1 = (select soda1 from factores)
+set @factor2 = (select soda2 from factores)
+set @factor3 = (select soda3 from factores)
+set @factor4 = (select soda4 from factores)
+set @factor5 = (select soda5 from factores)
+set @factor6 = (select soda6 from factores);
 
 select linea,[1],[2],[3],[4],[5],[6],[7],[8],[9],
 [10],[11],[12],[13],[14],[15],[16],[17],[18],[19],
 [20],[21],[22],[23],[24],[25],[26],[27],[28],[29],
 [30],[31] from (
-select 'Est 1 Lav 1' as linea,day(dia) as dia,sum(soda1)*@factor as dato
+select 'Est 1 Lav 1' as linea,day(dia) as dia,sum(soda1)*@factor1 as dato
 from ins.soda
 where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia
 
 union all
 
-select 'Est 2 Lav 1' as linea,day(dia) as dia,sum(soda2)*@factor as dato
+select 'Est 2 Lav 1' as linea,day(dia) as dia,sum(soda2)*@factor2 as dato
 from ins.soda
 where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia
 
 union all
 
-select 'Est 1 Lav 2' as linea,day(dia) as dia,sum(soda3)*@factor as dato
+select 'Est 1 Lav 2' as linea,day(dia) as dia,sum(soda3)*@factor3 as dato
 from ins.soda
 where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia
 
 union all
 
-select 'Est 2 Lav 2' as linea,day(dia) as dia,sum(soda4)*@factor as dato
+select 'Est 2 Lav 2' as linea,day(dia) as dia,sum(soda4)*@factor4 as dato
 from ins.soda
 where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia
 
 union all
 
-select 'Est 1 Lav 4' as linea,day(dia) as dia,sum(soda5)*@factor as dato
+select 'Est 1 Lav 4' as linea,day(dia) as dia,sum(soda5)*@factor5 as dato
 from ins.soda
 where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia
 
 union all
 
-select 'Est 2 Lav 4' as linea,day(dia) as dia,sum(soda6)*@factor as dato
+select 'Est 2 Lav 4' as linea,day(dia) as dia,sum(soda6)*@factor6 as dato
 from ins.soda
 where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia
@@ -138,16 +148,26 @@ order by substring(linea,11,1),substring(linea,5,1)">
         </SelectParameters>
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="dsGrafico" runat="server" ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>"
-        SelectCommand="declare @factor float
-set @factor = (select soda from factores);
+        SelectCommand="declare @factor1 float
+declare @factor2 float
+declare @factor3 float
+declare @factor4 float
+declare @factor5 float
+declare @factor6 float
+set @factor1 = (select soda1 from factores)
+set @factor2 = (select soda2 from factores)
+set @factor3 = (select soda3 from factores)
+set @factor4 = (select soda4 from factores)
+set @factor5 = (select soda5 from factores)
+set @factor6 = (select soda6 from factores);
 
 select dia,
-sum(soda1)*@factor as Linea1,
-sum(soda2)*@factor as Linea2,
-sum(soda3)*@factor as Linea3,
-sum(soda4)*@factor as Linea4,
-sum(soda5)*@factor as Linea5,
-sum(soda6)*@factor as Linea6
+sum(soda1)*@factor1 as Linea1,
+sum(soda2)*@factor2 as Linea2,
+sum(soda3)*@factor3 as Linea3,
+sum(soda4)*@factor4 as Linea4,
+sum(soda5)*@factor5 as Linea5,
+sum(soda6)*@factor6 as Linea6
 from ins.soda
 where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia">

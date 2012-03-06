@@ -95,16 +95,26 @@
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="ds" runat="server" ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>"
-        SelectCommand="declare @factor float
-set @factor = (select aditivo from factores)
+        SelectCommand="declare @factor1 float
+declare @factor2 float
+declare @factor3 float
+declare @factor4 float
+declare @factor5 float
+declare @factor6 float
+set @factor1 = (select aditivo1 from factores)
+set @factor2 = (select aditivo2 from factores)
+set @factor3 = (select aditivo3 from factores)
+set @factor4 = (select aditivo4 from factores)
+set @factor5 = (select aditivo5 from factores)
+set @factor6 = (select aditivo6 from factores)
 
 select Dia,
-sum(aditivo1)*@factor as aditivo1,
-sum(aditivo2)*@factor as aditivo2,
-sum(aditivo3)*@factor as aditivo3,
-sum(aditivo4)*@factor as aditivo4,
-sum(aditivo5)*@factor as aditivo5,
-sum(aditivo6)*@factor as aditivo6
+sum(aditivo1)*@factor1 as aditivo1,
+sum(aditivo2)*@factor2 as aditivo2,
+sum(aditivo3)*@factor3 as aditivo3,
+sum(aditivo4)*@factor4 as aditivo4,
+sum(aditivo5)*@factor5 as aditivo5,
+sum(aditivo6)*@factor6 as aditivo6
 from ins.aditivo
 where Dia between @inicio and @fin
 group by Dia
@@ -115,16 +125,26 @@ order by Dia">
         </SelectParameters>
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="dsResumen" runat="server" ConnectionString="<%$ ConnectionStrings:OPCMonitorConnectionString %>"
-        SelectCommand="declare @factor float
-set @factor = (select aditivo from factores);
+        SelectCommand="declare @factor1 float
+declare @factor2 float
+declare @factor3 float
+declare @factor4 float
+declare @factor5 float
+declare @factor6 float
+set @factor1 = (select aditivo1 from factores)
+set @factor2 = (select aditivo2 from factores)
+set @factor3 = (select aditivo3 from factores)
+set @factor4 = (select aditivo4 from factores)
+set @factor5 = (select aditivo5 from factores)
+set @factor6 = (select aditivo6 from factores);
 
-        with dias(dia) as (
+with dias(dia) as (
 	select distinct dia from ins.aditivo
 	where dia &gt;= @inicio and dia &lt;= @fin
 )
 
 select 'E1L1' as linea, sum(aditivo1) as ppto,
-(select sum(aditivo1)*@factor from ins.aditivo where dia &gt;= @inicio and dia &lt;= @fin) as real
+(select sum(aditivo1)*@factor1 from ins.aditivo where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.aditivo p
 on month(d.dia) = p.mes and year(d.dia) = p.ani
@@ -132,7 +152,7 @@ on month(d.dia) = p.mes and year(d.dia) = p.ani
 union all
 
 select 'E2L1' as linea, sum(aditivo2) as ppto,
-(select sum(aditivo2)*@factor from ins.aditivo where dia &gt;= @inicio and dia &lt;= @fin) as real
+(select sum(aditivo2)*@factor2 from ins.aditivo where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.aditivo p
 on month(d.dia) = p.mes and year(d.dia) = p.ani
@@ -140,14 +160,14 @@ on month(d.dia) = p.mes and year(d.dia) = p.ani
 union all
 
 select 'E1L2' as linea, sum(aditivo3) as ppto,
-(select sum(aditivo3)*@factor from ins.aditivo where dia &gt;= @inicio and dia &lt;= @fin) as real
+(select sum(aditivo3)*@factor3 from ins.aditivo where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.aditivo p
 on month(d.dia) = p.mes and year(d.dia) = p.ani
 union all
 
 select 'E2L2' as linea, sum(aditivo4) as ppto,
-(select sum(aditivo4)*@factor from ins.aditivo where dia &gt;= @inicio and dia &lt;= @fin) as real
+(select sum(aditivo4)*@factor4 from ins.aditivo where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.aditivo p
 on month(d.dia) = p.mes and year(d.dia) = p.ani
@@ -155,7 +175,7 @@ on month(d.dia) = p.mes and year(d.dia) = p.ani
 union all
 
 select 'E1L4' as linea, sum(aditivo5) as ppto,
-(select sum(aditivo5)*@factor from ins.aditivo where dia &gt;= @inicio and dia &lt;= @fin) as real
+(select sum(aditivo5)*@factor5 from ins.aditivo where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.aditivo p
 on month(d.dia) = p.mes and year(d.dia) = p.ani
@@ -163,7 +183,7 @@ on month(d.dia) = p.mes and year(d.dia) = p.ani
 union all
 
 select 'E2L4' as linea, sum(aditivo6) as ppto,
-(select sum(aditivo6)*@factor from ins.aditivo where dia &gt;= @inicio and dia &lt;= @fin) as real
+(select sum(aditivo6)*@factor6 from ins.aditivo where dia &gt;= @inicio and dia &lt;= @fin) as real
 from dias d
 left join pre.aditivo p
 on month(d.dia) = p.mes and year(d.dia) = p.ani">

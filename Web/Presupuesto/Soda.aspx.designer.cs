@@ -13,13 +13,58 @@ namespace Web.Presupuesto {
     public partial class soda {
         
         /// <summary>
-        /// tbFactor control.
+        /// tbFactor1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbFactor;
+        protected global::System.Web.UI.WebControls.TextBox tbFactor1;
+        
+        /// <summary>
+        /// tbFactor2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbFactor2;
+        
+        /// <summary>
+        /// tbFactor3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbFactor3;
+        
+        /// <summary>
+        /// tbFactor4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbFactor4;
+        
+        /// <summary>
+        /// tbFactor5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbFactor5;
+        
+        /// <summary>
+        /// tbFactor6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbFactor6;
         
         /// <summary>
         /// btnFactor control.

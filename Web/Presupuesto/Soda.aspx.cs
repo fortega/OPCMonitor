@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Data;
 
 namespace Web.Presupuesto
 {
@@ -26,13 +27,16 @@ namespace Web.Presupuesto
             using (SqlConnection c =
                 new SqlConnection(ConfigurationManager.ConnectionStrings["OPCMonitorConnectionString"].ConnectionString))
             {
-                SqlCommand cmd = new SqlCommand("select soda from factores", c);
+                SqlDataAdapter da = new SqlDataAdapter("select soda1,soda2,soda3,soda4,soda5,soda6 from factores", c);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
 
-                c.Open();
-                double factor = (double)cmd.ExecuteScalar();
-                c.Close();
-
-                tbFactor.Text = factor.ToString();
+                tbFactor1.Text = dt.Rows[0]["soda1"].ToString();
+                tbFactor2.Text = dt.Rows[0]["soda2"].ToString();
+                tbFactor3.Text = dt.Rows[0]["soda3"].ToString();
+                tbFactor4.Text = dt.Rows[0]["soda4"].ToString();
+                tbFactor5.Text = dt.Rows[0]["soda5"].ToString();
+                tbFactor6.Text = dt.Rows[0]["soda6"].ToString();
             }
         }
 
@@ -42,9 +46,15 @@ namespace Web.Presupuesto
             using (SqlConnection c =
                 new SqlConnection(ConfigurationManager.ConnectionStrings["OPCMonitorConnectionString"].ConnectionString))
             {
-                SqlCommand cmd = new SqlCommand("update factores set soda = @factor", c);
-                cmd.Parameters.Add("factor", System.Data.SqlDbType.Float).Value = float.Parse(tbFactor.Text);
-                
+                SqlCommand cmd =
+                    new SqlCommand("update factores set soda1 = @factor1, soda2 = @factor2, soda3 = @factor3, soda4 = @factor4, soda5 = @factor5, soda6 = @factor6", c);
+                cmd.Parameters.Add("factor1", System.Data.SqlDbType.Float).Value = double.Parse(tbFactor1.Text);
+                cmd.Parameters.Add("factor2", System.Data.SqlDbType.Float).Value = double.Parse(tbFactor2.Text);
+                cmd.Parameters.Add("factor3", System.Data.SqlDbType.Float).Value = double.Parse(tbFactor3.Text);
+                cmd.Parameters.Add("factor4", System.Data.SqlDbType.Float).Value = double.Parse(tbFactor4.Text);
+                cmd.Parameters.Add("factor5", System.Data.SqlDbType.Float).Value = double.Parse(tbFactor5.Text);
+                cmd.Parameters.Add("factor6", System.Data.SqlDbType.Float).Value = double.Parse(tbFactor6.Text);
+
                 c.Open();
                 cmd.ExecuteNonQuery();
                 c.Close();
