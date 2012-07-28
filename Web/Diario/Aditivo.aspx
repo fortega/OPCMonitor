@@ -62,6 +62,7 @@
             <asp:BoundField DataField="15" HeaderText="15" ReadOnly="True" SortExpression="15" DataFormatString="{0:#,0.0}" />
             <asp:BoundField DataField="16" HeaderText="16" ReadOnly="True" SortExpression="16" DataFormatString="{0:#,0.0}" />
             <asp:BoundField DataField="17" HeaderText="17" ReadOnly="True" SortExpression="17" DataFormatString="{0:#,0.0}" />
+            <asp:BoundField DataField="18" HeaderText="18" ReadOnly="True" SortExpression="18" DataFormatString="{0:#,0.0}" />
             <asp:BoundField DataField="19" HeaderText="19" ReadOnly="True" SortExpression="19" DataFormatString="{0:#,0.0}" />
             <asp:BoundField DataField="20" HeaderText="20" ReadOnly="True" SortExpression="20" DataFormatString="{0:#,0.0}" />
             <asp:BoundField DataField="21" HeaderText="21" ReadOnly="True" SortExpression="21" DataFormatString="{0:#,0.0}" />
@@ -71,6 +72,7 @@
             <asp:BoundField DataField="25" HeaderText="25" ReadOnly="True" SortExpression="25" DataFormatString="{0:#,0.0}" />
             <asp:BoundField DataField="26" HeaderText="26" ReadOnly="True" SortExpression="26" DataFormatString="{0:#,0.0}" />
             <asp:BoundField DataField="27" HeaderText="27" ReadOnly="True" SortExpression="27" DataFormatString="{0:#,0.0}" />
+            <asp:BoundField DataField="28" HeaderText="28" ReadOnly="True" SortExpression="28" DataFormatString="{0:#,0.0}" />
             <asp:BoundField DataField="29" HeaderText="29" ReadOnly="True" SortExpression="29" DataFormatString="{0:#,0.0}" />
             <asp:BoundField DataField="30" HeaderText="30" ReadOnly="True" SortExpression="30" DataFormatString="{0:#,0.0}" />
             <asp:BoundField DataField="31" HeaderText="31" ReadOnly="True" SortExpression="31" DataFormatString="{0:#,0.0}" />

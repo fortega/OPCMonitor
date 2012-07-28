@@ -70,7 +70,7 @@
             <asp:BoundField DataField="25" HeaderText="25" ReadOnly="True" SortExpression="25" DataFormatString="{0:#,0}" />
             <asp:BoundField DataField="26" HeaderText="26" ReadOnly="True" SortExpression="26" DataFormatString="{0:#,0}" />
             <asp:BoundField DataField="27" HeaderText="27" ReadOnly="True" SortExpression="27" DataFormatString="{0:#,0}" />
-            <asp:BoundField DataField="27" HeaderText="28" ReadOnly="True" SortExpression="28" DataFormatString="{0:#,0}" />
+            <asp:BoundField DataField="28" HeaderText="28" ReadOnly="True" SortExpression="28" DataFormatString="{0:#,0}" />
             <asp:BoundField DataField="29" HeaderText="29" ReadOnly="True" SortExpression="29" DataFormatString="{0:#,0}" />
             <asp:BoundField DataField="30" HeaderText="30" ReadOnly="True" SortExpression="30" DataFormatString="{0:#,0}" />
             <asp:BoundField DataField="31" HeaderText="31" ReadOnly="True" SortExpression="31" DataFormatString="{0:#,0}" />
