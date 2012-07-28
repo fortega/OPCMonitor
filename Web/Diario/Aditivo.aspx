@@ -97,8 +97,8 @@ set @factor5 = (select aditivo5 from factores)
 set @factor6 = (select aditivo6 from factores);
 
 select linea,[1],[2],[3],[4],[5],[6],[7],[8],[9],
-[10],[11],[12],[13],[14],[15],[16],[17],[19],
-[20],[21],[22],[23],[24],[25],[26],[27],[29],
+[10],[11],[12],[13],[14],[15],[16],[17],[18],[19],
+[20],[21],[22],[23],[24],[25],[26],[27],[28],[29],
 [30],[31] from (
 select 'Est 1 Lav 1' as linea,day(dia) as dia,sum(aditivo1)*@factor1 as dato
 from ins.aditivo
@@ -141,8 +141,8 @@ where month(dia) = (@fecha-(@fecha%10000))/10000 and year(dia) = @fecha%10000
 group by dia
 ) as d
 pivot (sum(dato) for dia in ([1],[2],[3],[4],[5],[6],[7],[8],[9],
-[10],[11],[12],[13],[14],[15],[16],[17],[19],
-[20],[21],[22],[23],[24],[25],[26],[27],[29],
+[10],[11],[12],[13],[14],[15],[16],[17],[18],[19],
+[20],[21],[22],[23],[24],[25],[26],[27],[28],[29],
 [30],[31])) as p
 order by substring(linea,11,1),substring(linea,5,1)">
         <SelectParameters>
